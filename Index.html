@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-key="pageTitle">AI-Powered Productivity for the Modern Professional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #3b82f6, #14b8a6); /* blue-500 to teal-500 */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .cta-button {
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3), 0 4px 6px -2px rgba(59, 130, 246, 0.2);
+        }
+        .feature-card:hover {
+            transform: scale(1.03);
+            transition: transform 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 shadow-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-500"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/><path d="m12 20 4-4"/></svg>
+                <span class="text-xl font-bold">Productivity<span class="text-blue-500">AI</span></span>
+            </div>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#about" class="text-slate-600 hover:text-blue-500 transition" data-key="navAbout">About</a>
+                <a href="#services" class="text-slate-600 hover:text-blue-500 transition" data-key="navTraining">Training</a>
+                <a href="#benefits" class="text-slate-600 hover:text-blue-500 transition" data-key="navResults">Results</a>
+                <a href="#contact" class="text-slate-600 hover:text-blue-500 transition" data-key="navContact">Contact</a>
+                <div class="relative" x-data="{ open: false }" @click.away="open = false">
+                    <button @click="open = !open" class="flex items-center text-slate-600 hover:text-blue-500 transition">
+                        <i data-lucide="globe" class="w-5 h-5 mr-1"></i>
+                        <span id="current-lang">EN</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
+                    </button>
+                    <div x-show="open" x-transition class="absolute right-0 mt-2 w-28 bg-white rounded-md shadow-lg py-1 z-20">
+                        <a href="#" class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100" @click.prevent="setLanguage('en'); open = false;">English</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100" @click.prevent="setLanguage('de'); open = false;">Deutsch</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100" @click.prevent="setLanguage('pl'); open = false;">Polski</a>
+                    </div>
+                </div>
+            </nav>
+            <a href="#contact" class="hidden md:inline-block bg-slate-800 text-white px-5 py-2 rounded-lg font-medium hover:bg-slate-700 transition" data-key="getStarted">Get Started</a>
+            <button id="mobile-menu-button" class="md:hidden">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 flex flex-col space-y-4">
+             <a href="#about" class="text-slate-600 hover:text-blue-500 transition" data-key="navAboutMobile">About</a>
+             <a href="#services" class="text-slate-600 hover:text-blue-500 transition" data-key="navTrainingMobile">Training</a>
+             <a href="#benefits" class="text-slate-600 hover:text-blue-500 transition" data-key="navResultsMobile">Results</a>
+             <a href="#contact" class="text-slate-600 hover:text-blue-500 transition" data-key="navContactMobile">Contact</a>
+             <hr/>
+             <a href="#" class="text-slate-600 hover:text-blue-500 transition" @click.prevent="setLanguage('en')">English</a>
+             <a href="#" class="text-slate-600 hover:text-blue-500 transition" @click.prevent="setLanguage('de')">Deutsch</a>
+             <a href="#" class="text-slate-600 hover:text-blue-500 transition" @click.prevent="setLanguage('pl')">Polski</a>
+             <hr/>
+             <a href="#contact" class="bg-blue-500 text-white text-center px-5 py-2 rounded-lg font-medium hover:bg-blue-600 transition" data-key="getStartedMobile">Get Started</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="pt-32 pb-20 md:pt-40 md:pb-28 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4" data-key="heroTitle">
+                    <!-- JS will populate this -->
+                </h1>
+                <p class="max-w-3xl mx-auto text-lg md:text-xl text-slate-600 mb-8" data-key="heroSubtitle">
+                    <!-- JS will populate this -->
+                </p>
+                <a href="#services" class="bg-blue-500 text-white px-8 py-4 rounded-lg font-semibold text-lg cta-button inline-block" data-key="heroCta">
+                    <!-- JS will populate this -->
+                </a>
+                <p class="mt-4 text-sm text-slate-500" data-key="heroSubCta">
+                    <!-- JS will populate this -->
+                </p>
+            </div>
+        </section>
+
+        <!-- Credibility & Authority Section -->
+        <section id="about" class="py-20 md:py-28">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+                    <div class="md:w-1/3">
+                        <img id="consultant-image" src="https://placehold.co/500x500/e2e8f0/334155?text=Expert+Consultant" alt="AI Productivity Consultant" class="rounded-xl shadow-2xl w-full">
+                    </div>
+                    <div class="md:w-2/3">
+                        <span class="text-blue-500 font-semibold" data-key="aboutTag">Meet Your Trainer</span>
+                        <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4" data-key="aboutTitle">From Procurement Excellence to Universal Productivity</h2>
+                        <p class="text-slate-600 mb-6 text-lg" data-key="aboutDescription">
+                            <!-- JS will populate this -->
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-slate-700">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="briefcase" class="text-blue-500"></i>
+                                <span data-key="aboutStat1"><strong>20+ Years</strong> in Procurement Management</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="cpu" class="text-blue-500"></i>
+                                <span data-key="aboutStat2"><strong>4+ Years</strong> in Applied AI Specialization</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="award" class="text-blue-500"></i>
+                                <span data-key="aboutStat3">Certified AI Practitioner</span>
+                            </div>
+                             <div class="flex items-center gap-3">
+                                <i data-lucide="users" class="text-blue-500"></i>
+                                <span data-key="aboutStat4">500+ Professionals Trained</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem Statement Section -->
+        <section class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4" data-key="problemTitle">Is Your Workflow Working Against You?</h2>
+                    <p class="text-lg text-slate-600 mb-12" data-key="problemSubtitle">
+                        <!-- JS will populate this -->
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-slate-50 p-8 rounded-xl text-center border border-slate-200">
+                        <div class="inline-block bg-blue-100 text-blue-500 p-4 rounded-full mb-4">
+                            <i data-lucide="files" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2" data-key="problem1Title">Endless Document Juggling</h3>
+                        <p class="text-slate-600" data-key="problem1Desc">Spending hours comparing reports, summarizing meeting notes, and analyzing strategic documents instead of acting on insights.</p>
+                    </div>
+                    <div class="bg-slate-50 p-8 rounded-xl text-center border border-slate-200">
+                        <div class="inline-block bg-teal-100 text-teal-500 p-4 rounded-full mb-4">
+                           <i data-lucide="repeat" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2" data-key="problem2Title">Repetitive Content Creation</h3>
+                        <p class="text-slate-600" data-key="problem2Desc">Wasting precious creative energy drafting routine emails, presentations, and summaries from scratch every single time.</p>
+                    </div>
+                    <div class="bg-slate-50 p-8 rounded-xl text-center border border-slate-200">
+                        <div class="inline-block bg-indigo-100 text-indigo-500 p-4 rounded-full mb-4">
+                           <i data-lucide="clock" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2" data-key="problem3Title">Information Overload</h3>
+                        <p class="text-slate-600" data-key="problem3Desc">Struggling to extract key information and actionable tasks from a constant firehose of data across multiple platforms and formats.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution Overview -->
+        <section class="py-20 md:py-28">
+            <div class="container mx-auto px-6 text-center">
+                 <h2 class="text-3xl md:text-4xl font-bold mb-4" data-key="solutionTitle">The AI-Powered Workflow Revolution</h2>
+                 <p class="text-lg text-slate-600 max-w-3xl mx-auto mb-12" data-key="solutionSubtitle">
+                    <!-- JS will populate this -->
+                 </p>
+                 <div class="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-xl border border-slate-200">
+                    <div class="flex items-center justify-center">
+                         <div class="w-full text-left p-6">
+                            <h4 class="text-2xl font-bold mb-4 text-slate-700" data-key="solutionBoxTitle">From Manual Grind to <span class="text-blue-500">AI-Assisted Flow</span></h4>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-4">
+                                    <i data-lucide="x-circle" class="text-red-500 mt-1 flex-shrink-0"></i>
+                                    <div data-key="solutionBefore1"><strong class="font-semibold">Before:</strong> Manually comparing versions of a strategy plan, line by line.</div>
+                                </li>
+                                <li class="flex items-start gap-4">
+                                    <i data-lucide="check-circle-2" class="text-green-500 mt-1 flex-shrink-0"></i>
+                                    <div data-key="solutionAfter1"><strong class="font-semibold">After:</strong> Instantly generating a summary of changes, key differences, and potential impacts with an AI assistant.</div>
+                                </li>
+                                <li class="flex items-start gap-4">
+                                    <i data-lucide="x-circle" class="text-red-500 mt-1 flex-shrink-0"></i>
+                                    <div data-key="solutionBefore2"><strong class="font-semibold">Before:</strong> Spending an hour building a project update presentation deck.</div>
+                                </li>
+                                <li class="flex items-start gap-4">
+                                    <i data-lucide="check-circle-2" class="text-green-500 mt-1 flex-shrink-0"></i>
+                                    <div data-key="solutionAfter2"><strong class="font-semibold">After:</strong> Creating a polished first draft in minutes by feeding key data points to an AI content generator.</div>
+                                </li>
+                            </ul>
+                         </div>
+                    </div>
+                 </div>
+            </div>
+        </section>
+
+        <!-- Training Program Details -->
+        <section id="services" class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4" data-key="trainingTitle">Comprehensive AI Productivity Training</h2>
+                    <p class="text-lg text-slate-600" data-key="trainingSubtitle">Our training is hands-on, interactive, and immediately applicable to your daily work, regardless of your role or industry.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Cards will be populated by JS -->
+                    <div class="border border-slate-200 rounded-xl p-8 bg-slate-50/50 feature-card">
+                        <i data-lucide="sparkles" class="w-10 h-10 text-blue-500 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2" data-key="training1Title">The AI Productivity Foundation</h3>
+                        <p class="text-slate-600" data-key="training1Desc">Understand the core concepts of personal AI, master prompt engineering, and discover the landscape of powerful tools.</p>
+                    </div>
+                    <div class="border border-slate-200 rounded-xl p-8 bg-slate-50/50 feature-card">
+                         <i data-lucide="file-search-2" class="w-10 h-10 text-blue-500 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2" data-key="training2Title">Mastering Document Analysis</h3>
+                        <p class="text-slate-600" data-key="training2Desc">Learn to summarize, compare, and extract insights from any document—reports, contracts, research papers, and more.</p>
+                    </div>
+                    <div class="border border-slate-200 rounded-xl p-8 bg-slate-50/50 feature-card">
+                        <i data-lucide="pen-tool" class="w-10 h-10 text-blue-500 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2" data-key="training3Title">AI-Assisted Content Creation</h3>
+                        <p class="text-slate-600" data-key="training3Desc">Automate the drafting of emails, presentations, reports, and marketing copy tailored to your professional voice.</p>
+                    </div>
+                    <div class="border border-slate-200 rounded-xl p-8 bg-slate-50/50 feature-card">
+                        <i data-lucide="workflow" class="w-10 h-10 text-blue-500 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2" data-key="training4Title">Automating Your Workflow</h3>
+                        <p class="text-slate-600" data-key="training4Desc">Connect AI tools to build custom workflows that handle repetitive tasks from data entry to scheduling.</p>
+                    </div>
+                    <div class="border border-slate-200 rounded-xl p-8 bg-slate-50/50 feature-card">
+                        <i data-lucide="brain-circuit" class="w-10 h-10 text-blue-500 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2" data-key="training5Title">Strategic Thinking with AI</h3>
+                        <p class="text-slate-600" data-key="training5Desc">Use AI as a brainstorming partner and strategic analyst to generate innovative ideas and forecast outcomes.</p>
+                    </div>
+                    <div class="border border-slate-200 rounded-xl p-8 bg-slate-50/50 feature-card">
+                        <i data-lucide="shield-check" class="w-10 h-10 text-blue-500 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2" data-key="training6Title">Ethical & Secure AI Usage</h3>
+                        <p class="text-slate-600" data-key="training6Desc">Learn best practices for using AI responsibly, protecting sensitive data, and maintaining professional integrity.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits & Results Section -->
+        <section id="benefits" class="py-20 md:py-28">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4" data-key="benefitsTitle">Unlock Quantifiable Results</h2>
+                    <p class="text-lg text-slate-600" data-key="benefitsSubtitle">This isn't just about learning new tools; it's about fundamentally enhancing your professional output and impact.</p>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <h3 class="text-5xl font-extrabold gradient-text">10+</h3>
+                        <p class="mt-2 text-lg font-semibold" data-key="benefit1Title">Hours Saved Weekly</p>
+                        <p class="text-slate-600" data-key="benefit1Desc">By automating repetitive administrative and content-related tasks.</p>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-5xl font-extrabold gradient-text">40%</h3>
+                        <p class="mt-2 text-lg font-semibold" data-key="benefit2Title">Increase in Work Quality</p>
+                        <p class="text-slate-600" data-key="benefit2Desc">Leveraging AI for better research, data analysis, and error-checking.</p>
+                    </div>
+                     <div class="text-center">
+                        <h3 class="text-5xl font-extrabold gradient-text">3X</h3>
+                        <p class="mt-2 text-lg font-semibold" data-key="benefit3Title">Faster Content Creation</p>
+                        <p class="text-slate-600" data-key="benefit3Desc">Go from initial concept to polished draft in a fraction of the time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Proof Section -->
+        <section class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4" data-key="socialProofTitle">Trusted by Professionals Like You</h2>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="bg-slate-50 p-8 rounded-xl border border-slate-200">
+                        <p class="text-slate-700 mb-6" data-key="testimonial1Text">"The principles I learned were immediately applicable. I've automated my weekly reporting process and saved a full day of work every month. Total game-changer."</p>
+                        <div class="flex items-center">
+                            <img src="https://placehold.co/48x48/e0e7ff/4338ca?text=SM" class="w-12 h-12 rounded-full mr-4" alt="Sarah M.">
+                            <div>
+                                <p class="font-bold" data-key="testimonial1Name">Sarah M.</p>
+                                <p class="text-sm text-slate-500" data-key="testimonial1Role">Marketing Director</p>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Testimonial 2 -->
+                    <div class="bg-slate-50 p-8 rounded-xl border border-slate-200">
+                        <p class="text-slate-700 mb-6" data-key="testimonial2Text">"I was skeptical about AI, but this training made it so accessible. I'm now using it to analyze customer feedback, and the insights are invaluable."</p>
+                        <div class="flex items-center">
+                            <img src="https://placehold.co/48x48/d1fae5/065f46?text=DJ" class="w-12 h-12 rounded-full mr-4" alt="David J.">
+                            <div>
+                                <p class="font-bold" data-key="testimonial2Name">David J.</p>
+                                <p class="text-sm text-slate-500" data-key="testimonial2Role">Operations Manager</p>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Testimonial 3 -->
+                    <div class="bg-slate-50 p-8 rounded-xl border border-slate-200">
+                        <p class="text-slate-700 mb-6" data-key="testimonial3Text">"As someone in a non-technical role, I was worried about being left behind. This course gave me the confidence and skills to use AI daily. My productivity has skyrocketed."</p>
+                        <div class="flex items-center">
+                            <img src="https://placehold.co/48x48/fee2e2/991b1b?text=LR" class="w-12 h-12 rounded-full mr-4" alt="Laura R.">
+                            <div>
+                                <p class="font-bold" data-key="testimonial3Name">Laura R.</p>
+                                <p class="text-sm text-slate-500" data-key="testimonial3Role">HR Business Partner</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-20 md:py-28">
+            <div class="container mx-auto px-6 max-w-4xl">
+                 <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4" data-key="faqTitle">Frequently Asked Questions</h2>
+                </div>
+                <div class="space-y-4">
+                    <div class="faq-item bg-white border border-slate-200 rounded-lg">
+                        <button class="faq-question w-full flex justify-between items-center text-left p-6">
+                            <span class="text-lg font-semibold" data-key="faq1Question">Do I need any technical or coding skills?</span>
+                            <i data-lucide="chevron-down" class="transition-transform"></i>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-6 text-slate-600">
+                            <p data-key="faq1Answer">Absolutely not. This training is designed for non-technical office professionals. We focus on user-friendly tools and techniques that require no programming. If you can use a web browser, you have all the technical skills you need.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item bg-white border border-slate-200 rounded-lg">
+                        <button class="faq-question w-full flex justify-between items-center text-left p-6">
+                            <span class="text-lg font-semibold" data-key="faq2Question">Is this training relevant to my specific industry?</span>
+                            <i data-lucide="chevron-down" class="transition-transform"></i>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-6 text-slate-600">
+                            <p data-key="faq2Answer">Yes. The core principles of AI-driven productivity—document analysis, content creation, and workflow automation—are universal. While the examples may vary, the techniques are applicable across finance, marketing, HR, operations, and any other knowledge-based field.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item bg-white border border-slate-200 rounded-lg">
+                        <button class="faq-question w-full flex justify-between items-center text-left p-6">
+                            <span class="text-lg font-semibold" data-key="faq3Question">What kind of AI tools will we use?</span>
+                            <i data-lucide="chevron-down" class="transition-transform"></i>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-6 text-slate-600">
+                            <p data-key="faq3Answer">We focus on a curated selection of the most powerful and accessible AI tools on the market, including large language models (like ChatGPT and Claude), specialized document analysis platforms, and automation software. We prioritize tools that have free or affordable entry-level plans.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call-to-Action Section -->
+        <section id="contact" class="py-20 md:py-28 bg-slate-800 text-white">
+            <div class="container mx-auto px-6 text-center">
+                 <h2 class="text-3xl md:text-4xl font-bold mb-4" data-key="ctaTitle">Ready to Future-Proof Your Career?</h2>
+                 <p class="text-lg text-slate-300 max-w-2xl mx-auto mb-10" data-key="ctaSubtitle">
+                    Take the first step toward becoming an AI-powered professional. Choose the path that's right for you and start your transformation today.
+                 </p>
+                 <div class="flex flex-col md:flex-row justify-center items-center gap-6">
+                    <a href="#" class="bg-blue-500 text-white px-8 py-4 rounded-lg font-semibold text-lg cta-button w-full md:w-auto" data-key="ctaButton1">
+                        Sign Up for a Workshop
+                    </a>
+                     <a href="#" class="bg-white text-slate-800 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-slate-200 transition w-full md:w-auto" data-key="ctaButton2">
+                        Book a Free Consultation
+                    </a>
+                 </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white">
+        <div class="container mx-auto px-6 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-500"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/><path d="m12 20 4-4"/></svg>
+                    <span class="text-xl font-bold">Productivity<span class="text-blue-500">AI</span></span>
+                </div>
+                 <div class="text-sm text-slate-500 text-center" data-key="footerRights">
+                    &copy; 2025 ProductivityAI. All rights reserved.
+                 </div>
+                 <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="text-slate-500 hover:text-blue-500"><i data-lucide="linkedin"></i></a>
+                    <a href="#" class="text-slate-500 hover:text-blue-500"><i data-lucide="twitter"></i></a>
+                 </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Translations Object
+        const translations = {
+            en: {
+                pageTitle: "AI-Powered Productivity for the Modern Professional",
+                navAbout: "About",
+                navTraining: "Training",
+                navResults: "Results",
+                navContact: "Contact",
+                getStarted: "Get Started",
+                navAboutMobile: "About",
+                navTrainingMobile: "Training",
+                navResultsMobile: "Results",
+                navContactMobile: "Contact",
+                getStartedMobile: "Get Started",
+                heroTitle: "Transform Your Workday with <span class='gradient-text'>AI-Powered Productivity</span>",
+                heroSubtitle: "Leveraging 20 years of procurement strategy and 4 years of applied AI expertise to supercharge productivity for all office professionals.",
+                heroCta: "Start Your AI Transformation",
+                heroSubCta: "Unlock your true potential. No credit card required.",
+                aboutTag: "Meet Your Trainer",
+                aboutTitle: "From Procurement Excellence to Universal Productivity",
+                aboutDescription: "With two decades in complex procurement environments, I saw firsthand how professionals drown in document-heavy, repetitive tasks. Four years ago, I began pioneering the use of AI to solve these challenges, achieving unprecedented efficiency. Now, I bring these battle-tested strategies to every office professional, helping you reclaim your time and focus on what truly matters.",
+                aboutStat1: "<strong>20+ Years</strong> in Procurement Management",
+                aboutStat2: "<strong>4+ Years</strong> in Applied AI Specialization",
+                aboutStat3: "Certified AI Practitioner",
+                aboutStat4: "500+ Professionals Trained",
+                problemTitle: "Is Your Workflow Working Against You?",
+                problemSubtitle: "In today's fast-paced environment, knowledge workers are constantly bogged down by tasks that drain time and energy, stifling strategic thinking and innovation.",
+                problem1Title: "Endless Document Juggling",
+                problem1Desc: "Spending hours comparing reports, summarizing meeting notes, and analyzing strategic documents instead of acting on insights.",
+                problem2Title: "Repetitive Content Creation",
+                problem2Desc: "Wasting precious creative energy drafting routine emails, presentations, and summaries from scratch every single time.",
+                problem3Title: "Information Overload",
+                problem3Desc: "Struggling to extract key information and actionable tasks from a constant firehose of data across multiple platforms and formats.",
+                solutionTitle: "The AI-Powered Workflow Revolution",
+                solutionSubtitle: "AI isn't about replacing you. It's about augmenting your abilities, automating the mundane, and freeing you to do your best, most impactful work. The same AI principles that streamline multi-million dollar contracts can revolutionize your daily to-do list.",
+                solutionBoxTitle: "From Manual Grind to <span class='text-blue-500'>AI-Assisted Flow</span>",
+                solutionBefore1: "<strong class='font-semibold'>Before:</strong> Manually comparing versions of a strategy plan, line by line.",
+                solutionAfter1: "<strong class='font-semibold'>After:</strong> Instantly generating a summary of changes, key differences, and potential impacts with an AI assistant.",
+                solutionBefore2: "<strong class='font-semibold'>Before:</strong> Spending an hour building a project update presentation deck.",
+                solutionAfter2: "<strong class='font-semibold'>After:</strong> Creating a polished first draft in minutes by feeding key data points to an AI content generator.",
+                trainingTitle: "Comprehensive AI Productivity Training",
+                trainingSubtitle: "Our training is hands-on, interactive, and immediately applicable to your daily work, regardless of your role or industry.",
+                training1Title: "The AI Productivity Foundation",
+                training1Desc: "Understand the core concepts of personal AI, master prompt engineering, and discover the landscape of powerful tools.",
+                training2Title: "Mastering Document Analysis",
+                training2Desc: "Learn to summarize, compare, and extract insights from any document—reports, contracts, research papers, and more.",
+                training3Title: "AI-Assisted Content Creation",
+                training3Desc: "Automate the drafting of emails, presentations, reports, and marketing copy tailored to your professional voice.",
+                training4Title: "Automating Your Workflow",
+                training4Desc: "Connect AI tools to build custom workflows that handle repetitive tasks from data entry to scheduling.",
+                training5Title: "Strategic Thinking with AI",
+                training5Desc: "Use AI as a brainstorming partner and strategic analyst to generate innovative ideas and forecast outcomes.",
+                training6Title: "Ethical & Secure AI Usage",
+                training6Desc: "Learn best practices for using AI responsibly, protecting sensitive data, and maintaining professional integrity.",
+                benefitsTitle: "Unlock Quantifiable Results",
+                benefitsSubtitle: "This isn't just about learning new tools; it's about fundamentally enhancing your professional output and impact.",
+                benefit1Title: "Hours Saved Weekly",
+                benefit1Desc: "By automating repetitive administrative and content-related tasks.",
+                benefit2Title: "Increase in Work Quality",
+                benefit2Desc: "Leveraging AI for better research, data analysis, and error-checking.",
+                benefit3Title: "Faster Content Creation",
+                benefit3Desc: "Go from initial concept to polished draft in a fraction of the time.",
+                socialProofTitle: "Trusted by Professionals Like You",
+                testimonial1Text: "\"The principles I learned were immediately applicable. I've automated my weekly reporting process and saved a full day of work every month. Total game-changer.\"",
+                testimonial1Name: "Sarah M.",
+                testimonial1Role: "Marketing Director",
+                testimonial2Text: "\"I was skeptical about AI, but this training made it so accessible. I'm now using it to analyze customer feedback, and the insights are invaluable.\"",
+                testimonial2Name: "David J.",
+                testimonial2Role: "Operations Manager",
+                testimonial3Text: "\"As someone in a non-technical role, I was worried about being left behind. This course gave me the confidence and skills to use AI daily. My productivity has skyrocketed.\"",
+                testimonial3Name: "Laura R.",
+                testimonial3Role: "HR Business Partner",
+                faqTitle: "Frequently Asked Questions",
+                faq1Question: "Do I need any technical or coding skills?",
+                faq1Answer: "Absolutely not. This training is designed for non-technical office professionals. We focus on user-friendly tools and techniques that require no programming. If you can use a web browser, you have all the technical skills you need.",
+                faq2Question: "Is this training relevant to my specific industry?",
+                faq2Answer: "Yes. The core principles of AI-driven productivity—document analysis, content creation, and workflow automation—are universal. While the examples may vary, the techniques are applicable across finance, marketing, HR, operations, and any other knowledge-based field.",
+                faq3Question: "What kind of AI tools will we use?",
+                faq3Answer: "We focus on a curated selection of the most powerful and accessible AI tools on the market, including large language models (like ChatGPT and Claude), specialized document analysis platforms, and automation software. We prioritize tools that have free or affordable entry-level plans.",
+                ctaTitle: "Ready to Future-Proof Your Career?",
+                ctaSubtitle: "Take the first step toward becoming an AI-powered professional. Choose the path that's right for you and start your transformation today.",
+                ctaButton1: "Sign Up for a Workshop",
+                ctaButton2: "Book a Free Consultation",
+                footerRights: "&copy; 2025 ProductivityAI. All rights reserved.",
+            },
+            de: {
+                pageTitle: "KI-gestützte Produktivität für den modernen Berufstätigen",
+                navAbout: "Über uns",
+                navTraining: "Training",
+                navResults: "Ergebnisse",
+                navContact: "Kontakt",
+                getStarted: "Jetzt loslegen",
+                navAboutMobile: "Über uns",
+                navTrainingMobile: "Training",
+                navResultsMobile: "Ergebnisse",
+                navContactMobile: "Kontakt",
+                getStartedMobile: "Jetzt loslegen",
+                heroTitle: "Transformieren Sie Ihren Arbeitstag mit <span class='gradient-text'>KI-gestützter Produktivität</span>",
+                heroSubtitle: "Wir nutzen 20 Jahre Erfahrung in der Beschaffungsstrategie und 4 Jahre angewandte KI-Expertise, um die Produktivität aller Büroangestellten zu steigern.",
+                heroCta: "Starten Sie Ihre KI-Transformation",
+                heroSubCta: "Entfalten Sie Ihr wahres Potenzial. Keine Kreditkarte erforderlich.",
+                aboutTag: "Lernen Sie Ihren Trainer kennen",
+                aboutTitle: "Von exzellenter Beschaffung zu universeller Produktivität",
+                aboutDescription: "Nach zwei Jahrzehnten in komplexen Beschaffungsumgebungen habe ich aus erster Hand erfahren, wie Fachleute in dokumentenlastigen, repetitiven Aufgaben ertrinken. Vor vier Jahren begann ich, den Einsatz von KI zur Lösung dieser Herausforderungen voranzutreiben und erzielte eine beispiellose Effizienz. Jetzt bringe ich diese bewährten, praxiserprobten Strategien zu jedem Büroangestellten, um Ihnen zu helfen, Ihre Zeit zurückzugewinnen und sich auf das Wesentliche zu konzentrieren.",
+                aboutStat1: "<strong>20+ Jahre</strong> im Beschaffungsmanagement",
+                aboutStat2: "<strong>4+ Jahre</strong> in angewandter KI-Spezialisierung",
+                aboutStat3: "Zertifizierter KI-Praktiker",
+                aboutStat4: "Über 500 Fachleute geschult",
+                problemTitle: "Arbeitet Ihr Workflow gegen Sie?",
+                problemSubtitle: "In der heutigen schnelllebigen Umgebung werden Wissensarbeiter ständig von Aufgaben aufgehalten, die Zeit und Energie rauben und strategisches Denken und Innovation behindern.",
+                problem1Title: "Endloses Dokumenten-Jonglieren",
+                problem1Desc: "Stundenlanges Vergleichen von Berichten, Zusammenfassen von Besprechungsnotizen und Analysieren strategischer Dokumente, anstatt auf Erkenntnisse zu reagieren.",
+                problem2Title: "Repetitive Inhaltserstellung",
+                problem2Desc: "Wertvolle kreative Energie wird verschwendet, indem routinemäßige E-Mails, Präsentationen und Zusammenfassungen jedes Mal von Grund auf neu erstellt werden.",
+                problem3Title: "Informationsüberflutung",
+                problem3Desc: "Schwierigkeiten, wichtige Informationen und umsetzbare Aufgaben aus einer ständigen Datenflut über mehrere Plattformen und Formate hinweg zu extrahieren.",
+                solutionTitle: "Die Revolution des KI-gestützten Workflows",
+                solutionSubtitle: "Bei KI geht es nicht darum, Sie zu ersetzen. Es geht darum, Ihre Fähigkeiten zu erweitern, das Alltägliche zu automatisieren und Ihnen die Freiheit zu geben, Ihre beste und wirkungsvollste Arbeit zu leisten. Dieselben KI-Prinzipien, die millionenschwere Verträge optimieren, können auch Ihre tägliche To-Do-Liste revolutionieren.",
+                solutionBoxTitle: "Von manueller Plackerei zu <span class='text-blue-500'>KI-gestütztem Flow</span>",
+                solutionBefore1: "<strong class='font-semibold'>Vorher:</strong> Manuelles, zeilenweises Vergleichen von Versionen eines Strategieplans.",
+                solutionAfter1: "<strong class='font-semibold'>Nachher:</strong> Sofortige Erstellung einer Zusammenfassung der Änderungen, Hauptunterschiede und potenziellen Auswirkungen mit einem KI-Assistenten.",
+                solutionBefore2: "<strong class='font-semibold'>Vorher:</strong> Eine Stunde für die Erstellung einer Projekt-Update-Präsentation aufwenden.",
+                solutionAfter2: "<strong class='font-semibold'>Nachher:</strong> Erstellen Sie in wenigen Minuten einen ausgefeilten ersten Entwurf, indem Sie einem KI-Inhaltsgenerator wichtige Datenpunkte zuführen.",
+                trainingTitle: "Umfassendes KI-Produktivitätstraining",
+                trainingSubtitle: "Unser Training ist praxisnah, interaktiv und sofort auf Ihre tägliche Arbeit anwendbar, unabhängig von Ihrer Rolle oder Branche.",
+                training1Title: "Die KI-Produktivitätsgrundlage",
+                training1Desc: "Verstehen Sie die Kernkonzepte der persönlichen KI, lernen Sie Prompt-Engineering und entdecken Sie die Landschaft leistungsstarker Werkzeuge.",
+                training2Title: "Meisterung der Dokumentenanalyse",
+                training2Desc: "Lernen Sie, jedes Dokument zusammenzufassen, zu vergleichen und Erkenntnisse daraus zu gewinnen – Berichte, Verträge, Forschungsarbeiten und mehr.",
+                training3Title: "KI-gestützte Inhaltserstellung",
+                training3Desc: "Automatisieren Sie die Erstellung von E-Mails, Präsentationen, Berichten und Marketingtexten, die auf Ihre professionelle Stimme zugeschnitten sind.",
+                training4Title: "Automatisierung Ihres Workflows",
+                training4Desc: "Verbinden Sie KI-Tools, um benutzerdefinierte Workflows zu erstellen, die repetitive Aufgaben von der Dateneingabe bis zur Terminplanung erledigen.",
+                training5Title: "Strategisches Denken mit KI",
+                training5Desc: "Nutzen Sie KI als Brainstorming-Partner und strategischen Analysten, um innovative Ideen zu generieren und Ergebnisse zu prognostizieren.",
+                training6Title: "Ethische & sichere KI-Nutzung",
+                training6Desc: "Lernen Sie Best Practices für den verantwortungsvollen Umgang mit KI, den Schutz sensibler Daten und die Wahrung beruflicher Integrität.",
+                benefitsTitle: "Erschließen Sie quantifizierbare Ergebnisse",
+                benefitsSubtitle: "Hier geht es nicht nur darum, neue Werkzeuge zu erlernen; es geht darum, Ihre berufliche Leistung und Ihren Einfluss grundlegend zu verbessern.",
+                benefit1Title: "Stunden pro Woche gespart",
+                benefit1Desc: "Durch die Automatisierung repetitiver administrativer und inhaltsbezogener Aufgaben.",
+                benefit2Title: "Steigerung der Arbeitsqualität",
+                benefit2Desc: "Nutzung von KI für bessere Recherchen, Datenanalysen und Fehlerprüfungen.",
+                benefit3Title: "Schnellere Inhaltserstellung",
+                benefit3Desc: "Vom ersten Konzept zum fertigen Entwurf in einem Bruchteil der Zeit.",
+                socialProofTitle: "Von Fachleuten wie Ihnen geschätzt",
+                testimonial1Text: "\"Die gelernten Prinzipien waren sofort anwendbar. Ich habe meinen wöchentlichen Berichtsprozess automatisiert und spare mir jeden Monat einen ganzen Arbeitstag. Ein echter Wendepunkt.\"",
+                testimonial1Name: "Sarah M.",
+                testimonial1Role: "Marketingdirektorin",
+                testimonial2Text: "\"Ich war skeptisch gegenüber KI, aber dieses Training hat es so zugänglich gemacht. Ich nutze jetzt KI zur Analyse von Kundenfeedback, und die gewonnenen Erkenntnisse sind von unschätzbarem Wert.\"",
+                testimonial2Name: "David J.",
+                testimonial2Role: "Betriebsleiter",
+                testimonial3Text: "\"Als jemand in einer nicht-technischen Rolle hatte ich Angst, den Anschluss zu verlieren. Dieser Kurs gab mir das Selbstvertrauen und die Fähigkeiten, KI täglich zu nutzen. Meine Produktivität ist in die Höhe geschossen.\"",
+                testimonial3Name: "Laura R.",
+                testimonial3Role: "HR Business Partner",
+                faqTitle: "Häufig gestellte Fragen",
+                faq1Question: "Benötige ich technische oder Programmierkenntnisse?",
+                faq1Answer: "Absolut nicht. Dieses Training ist für nicht-technische Büroangestellte konzipiert. Wir konzentrieren uns auf benutzerfreundliche Werkzeuge und Techniken, die keine Programmierung erfordern. Wenn Sie einen Webbrowser bedienen können, haben Sie alle notwendigen technischen Fähigkeiten.",
+                faq2Question: "Ist dieses Training für meine spezielle Branche relevant?",
+                faq2Answer: "Ja. Die Kernprinzipien der KI-gesteuerten Produktivität – Dokumentenanalyse, Inhaltserstellung und Workflow-Automatisierung – sind universell. Obwohl die Beispiele variieren können, sind die Techniken in den Bereichen Finanzen, Marketing, Personalwesen, Betrieb und jedem anderen wissensbasierten Feld anwendbar.",
+                faq3Question: "Welche Art von KI-Tools werden wir verwenden?",
+                faq3Answer: "Wir konzentrieren uns auf eine kuratierte Auswahl der leistungsstärksten und zugänglichsten KI-Tools auf dem Markt, einschließlich großer Sprachmodelle (wie ChatGPT und Claude), spezialisierter Dokumentenanalyseplattformen und Automatisierungssoftware. Wir legen Wert auf Tools, die kostenlose oder erschwingliche Einsteigertarife haben.",
+                ctaTitle: "Bereit, Ihre Karriere zukunftssicher zu machen?",
+                ctaSubtitle: "Machen Sie den ersten Schritt, um ein KI-gestützter Profi zu werden. Wählen Sie den für Sie richtigen Weg und beginnen Sie noch heute Ihre Transformation.",
+                ctaButton1: "Für einen Workshop anmelden",
+                ctaButton2: "Kostenlose Beratung buchen",
+                footerRights: "&copy; 2025 ProductivityAI. Alle Rechte vorbehalten.",
+            },
+            pl: {
+                pageTitle: "Produktywność oparta na AI dla nowoczesnego profesjonalisty",
+                navAbout: "O nas",
+                navTraining: "Szkolenia",
+                navResults: "Wyniki",
+                navContact: "Kontakt",
+                getStarted: "Zacznij teraz",
+                navAboutMobile: "O nas",
+                navTrainingMobile: "Szkolenia",
+                navResultsMobile: "Wyniki",
+                navContactMobile: "Kontakt",
+                getStartedMobile: "Zacznij teraz",
+                heroTitle: "Zmień swój dzień pracy dzięki <span class='gradient-text'>Produktywności opartej na AI</span>",
+                heroSubtitle: "Wykorzystujemy 20 lat doświadczenia w strategii zaopatrzenia i 4 lata specjalistycznej wiedzy w zakresie AI, aby zwiększyć produktywność wszystkich pracowników biurowych.",
+                heroCta: "Rozpocznij swoją transformację z AI",
+                heroSubCta: "Odkryj swój prawdziwy potencjał. Karta kredytowa nie jest wymagana.",
+                aboutTag: "Poznaj swojego trenera",
+                aboutTitle: "Od doskonałości w zaopatrzeniu do uniwersalnej produktywności",
+                aboutDescription: "Dzięki dwóm dekadom doświadczenia w złożonych środowiskach zaopatrzeniowych, na własne oczy widziałem, jak profesjonaliści toną w powtarzalnych zadaniach związanych z dokumentami. Cztery lata temu zacząłem pioniersko wykorzystywać AI do rozwiązywania tych problemów, osiągając bezprecedensową wydajność. Teraz udostępniam te sprawdzone, przetestowane w boju strategie każdemu pracownikowi biurowemu, pomagając odzyskać czas i skupić się na tym, co naprawdę ważne.",
+                aboutStat1: "<strong>20+ lat</strong> w zarządzaniu zaopatrzeniem",
+                aboutStat2: "<strong>4+ lata</strong> specjalizacji w stosowanej AI",
+                aboutStat3: "Certyfikowany Praktyk AI",
+                aboutStat4: "Przeszkolono ponad 500 profesjonalistów",
+                problemTitle: "Czy Twój przepływ pracy działa przeciwko Tobie?",
+                problemSubtitle: "W dzisiejszym dynamicznym środowisku, pracownicy umysłowi są nieustannie obciążeni zadaniami, które pochłaniają czas i energię, hamując strategiczne myślenie i innowacje.",
+                problem1Title: "Niekończące się żonglowanie dokumentami",
+                problem1Desc: "Spędzanie godzin na porównywaniu raportów, podsumowywaniu notatek ze spotkań i analizowaniu dokumentów strategicznych zamiast działania na podstawie wniosków.",
+                problem2Title: "Powtarzalne tworzenie treści",
+                problem2Desc: "Marnowanie cennej energii twórczej na pisanie rutynowych e-maili, prezentacji i podsumowań od zera za każdym razem.",
+                problem3Title: "Przeładowanie informacjami",
+                problem3Desc: "Trudności z wydobyciem kluczowych informacji i zadań do wykonania z ciągłego potoku danych na różnych platformach i w różnych formatach.",
+                solutionTitle: "Rewolucja w przepływie pracy wspomaganym przez AI",
+                solutionSubtitle: "AI nie ma na celu Cię zastąpić. Chodzi o wzmocnienie Twoich umiejętności, automatyzację przyziemnych zadań i uwolnienie Cię, abyś mógł wykonywać swoją najlepszą, najbardziej wpływową pracę. Te same zasady AI, które usprawniają wielomilionowe kontrakty, mogą zrewolucjonizować Twoją codzienną listę zadań.",
+                solutionBoxTitle: "Od ręcznej harówki do <span class='text-blue-500'>płynności napędzanej przez AI</span>",
+                solutionBefore1: "<strong class='font-semibold'>Przed:</strong> Ręczne, linijka po linijce, porównywanie wersji planu strategicznego.",
+                solutionAfter1: "<strong class='font-semibold'>Po:</strong> Błyskawiczne generowanie podsumowania zmian, kluczowych różnic i potencjalnych skutków za pomocą asystenta AI.",
+                solutionBefore2: "<strong class='font-semibold'>Przed:</strong> Spędzanie godziny na przygotowywaniu prezentacji z aktualizacją projektu.",
+                solutionAfter2: "<strong class='font-semibold'>Po:</strong> Stwórz dopracowany pierwszy szkic w ciągu kilku minut, dostarczając kluczowe dane do generatora treści AI.",
+                trainingTitle: "Kompleksowe szkolenie z produktywności AI",
+                trainingSubtitle: "Nasze szkolenie jest praktyczne, interaktywne i ma natychmiastowe zastosowanie w codziennej pracy, niezależnie od Twojej roli czy branży.",
+                training1Title: "Fundamenty Produktywności AI",
+                training1Desc: "Zrozum podstawowe koncepcje osobistej AI, naucz się inżynierii promptów i odkryj krajobraz potężnych narzędzi.",
+                training2Title: "Mistrzostwo w Analizie Dokumentów",
+                training2Desc: "Naucz się podsumowywać, porównywać i wyciągać wnioski z dowolnego dokumentu — raportów, umów, badań naukowych i innych.",
+                training3Title: "Tworzenie Treści Wspomagane przez AI",
+                training3Desc: "Zautomatyzuj tworzenie e-maili, prezentacji, raportów i tekstów marketingowych, dostosowanych do Twojego profesjonalnego głosu.",
+                training4Title: "Automatyzacja Przepływu Pracy",
+                training4Desc: "Połącz narzędzia AI, aby budować niestandardowe przepływy pracy, które obsługują powtarzalne zadania, od wprowadzania danych po planowanie.",
+                training5Title: "Strategiczne Myślenie z AI",
+                training5Desc: "Używaj AI jako partnera do burzy mózgów i analityka strategicznego, aby generować innowacyjne pomysły i prognozować wyniki.",
+                training6Title: "Etyczne i Bezpieczne Użycie AI",
+                training6Desc: "Poznaj najlepsze praktyki odpowiedzialnego korzystania z AI, ochrony wrażliwych danych i zachowania profesjonalnej integralności.",
+                benefitsTitle: "Osiągnij wymierne rezultaty",
+                benefitsSubtitle: "Nie chodzi tylko o naukę nowych narzędzi; chodzi o fundamentalne ulepszenie Twojej profesjonalnej wydajności i wpływu.",
+                benefit1Title: "Godzin oszczędzonych tygodniowo",
+                benefit1Desc: "Dzięki automatyzacji powtarzalnych zadań administracyjnych i związanych z treścią.",
+                benefit2Title: "Wzrost jakości pracy",
+                benefit2Desc: "Wykorzystanie AI do lepszych badań, analizy danych i sprawdzania błędów.",
+                benefit3Title: "Szybsze tworzenie treści",
+                benefit3Desc: "Przejdź od początkowego pomysłu do gotowego projektu w ułamku czasu.",
+                socialProofTitle: "Zaufali nam profesjonaliści tacy jak Ty",
+                testimonial1Text: "\"Zasady, których się nauczyłam, były natychmiast do zastosowania. Zautomatyzowałam mój tygodniowy proces raportowania i zaoszczędziłam cały dzień pracy każdego miesiąca. To całkowita zmiana gry.\"",
+                testimonial1Name: "Sara M.",
+                testimonial1Role: "Dyrektor Marketingu",
+                testimonial2Text: "\"Byłem sceptyczny co do AI, ale to szkolenie uczyniło je tak przystępnym. Teraz używam AI do analizy opinii klientów, a zdobyte dzięki temu informacje są bezcenne.\"",
+                testimonial2Name: "Dawid J.",
+                testimonial2Role: "Menedżer Operacyjny",
+                testimonial3Text: "\"Jako osoba na stanowisku nietechnicznym, martwiłam się, że zostanę w tyle. Ten kurs dał mi pewność siebie i umiejętności do codziennego korzystania z AI. Moja produktywność poszybowała w górę.\"",
+                testimonial3Name: "Laura R.",
+                testimonial3Role: "Partner Biznesowy HR",
+                faqTitle: "Często zadawane pytania",
+                faq1Question: "Czy potrzebuję umiejętności technicznych lub programistycznych?",
+                faq1Answer: "Absolutnie nie. To szkolenie jest przeznaczone dla nietechnicznych pracowników biurowych. Skupiamy się na przyjaznych dla użytkownika narzędziach i technikach, które nie wymagają programowania. Jeśli potrafisz korzystać z przeglądarki internetowej, posiadasz wszystkie potrzebne umiejętności techniczne.",
+                faq2Question: "Czy to szkolenie jest odpowiednie dla mojej branży?",
+                faq2Answer: "Tak. Podstawowe zasady produktywności opartej na AI — analiza dokumentów, tworzenie treści i automatyzacja przepływu pracy — są uniwersalne. Chociaż przykłady mogą się różnić, techniki te mają zastosowanie w finansach, marketingu, HR, operacjach i każdej innej dziedzinie opartej na wiedzy.",
+                faq3Question: "Jakich narzędzi AI będziemy używać?",
+                faq3Answer: "Skupiamy się na starannie dobranej selekcji najpotężniejszych i najbardziej dostępnych narzędzi AI na rynku, w tym dużych modeli językowych (takich jak ChatGPT i Claude), specjalistycznych platform do analizy dokumentów i oprogramowania do automatyzacji. Kładziemy nacisk na narzędzia, które mają darmowe lub przystępne cenowo plany dla początkujących.",
+                ctaTitle: "Gotowy, by zabezpieczyć swoją karierę na przyszłość?",
+                ctaSubtitle: "Zrób pierwszy krok w kierunku stania się profesjonalistą wspieranym przez AI. Wybierz ścieżkę odpowiednią dla siebie i rozpocznij swoją transformację już dziś.",
+                ctaButton1: "Zapisz się na warsztaty",
+                ctaButton2: "Zarezerwuj bezpłatną konsultację",
+                footerRights: "&copy; 2025 ProductivityAI. Wszelkie prawa zastrzeżone.",
+            }
+        };
+
+        // Language Switcher Logic
+        function setLanguage(lang) {
+            localStorage.setItem('language', lang);
+            applyTranslations(lang);
+        }
+
+        function applyTranslations(lang) {
+            document.documentElement.lang = lang;
+            document.querySelectorAll('[data-key]').forEach(element => {
+                const key = element.getAttribute('data-key');
+                if (translations[lang] && translations[lang][key]) {
+                    element.innerHTML = translations[lang][key];
+                }
+            });
+            
+            // Update the language display in the header
+            const currentLangElement = document.getElementById('current-lang');
+            if (currentLangElement) {
+                currentLangElement.textContent = lang.toUpperCase();
+            }
+
+            // Update the placeholder image text based on language
+            const consultantImage = document.getElementById('consultant-image');
+            const imageText = {
+                en: "Expert+Consultant",
+                de: "Expertenberater",
+                pl: "Ekspert+Konsultant"
+            };
+            if(consultantImage && imageText[lang]) {
+                consultantImage.src = `https://placehold.co/500x500/e2e8f0/334155?text=${imageText[lang]}`;
+            }
+
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // FAQ Accordion
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                const icon = question.querySelector('i');
+
+                question.addEventListener('click', () => {
+                    const isVisible = !answer.classList.contains('hidden');
+                    answer.classList.toggle('hidden');
+                    icon.classList.toggle('rotate-180', !isVisible);
+                });
+            });
+            
+            // Set initial language
+            const savedLang = localStorage.getItem('language') || 'en';
+            setLanguage(savedLang);
+        });
+    </script>
+</body>
+</html>
+
