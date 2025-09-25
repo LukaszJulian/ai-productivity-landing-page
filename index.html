@@ -670,17 +670,6 @@
                 currentLangElement.textContent = lang.toUpperCase();
             }
 
-            // Update the placeholder image text based on language
-            const consultantImage = document.getElementById('consultant-image');
-            const imageText = {
-                en: "Expert+Consultant",
-                de: "Expertenberater",
-                pl: "Ekspert+Konsultant"
-            };
-            if(consultantImage && imageText[lang]) {
-                consultantImage.src = `https://placehold.co/500x500/e2e8f0/334155?text=${imageText[lang]}`;
-            }
-
         }
 
         document.addEventListener('DOMContentLoaded', () => {
