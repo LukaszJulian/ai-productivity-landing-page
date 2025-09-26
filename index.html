@@ -3,11 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO: Title Tag (Managed by JS) -->
     <title data-key="pageTitle">AI-Powered Productivity for the Modern Professional</title>
-    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    
+    <!-- SEO: Meta Description (Now managed by JS for multi-language) -->
+    <meta name="description" data-key="metaDescription" content="Transform your workday with AI-powered productivity training. 20+ years procurement expertise meets 4+ years AI specialization. Boost efficiency for all office professionals.">
+
+    <!-- SEO: Internationalization (Hreflang Tags) - CRITICAL IMPROVEMENT -->
+    <link rel="alternate" hreflang="en" href="https://www.smartworkai.pro/" />
+    <link rel="alternate" hreflang="de" href="https://www.smartworkai.pro/" />
+    <link rel="alternate" hreflang="pl" href="https://www.smartworkai.pro/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.smartworkai.pro/" />
+
+    <!-- SEO: Canonical and Robots Tags (Correctly implemented) -->
     <link rel="canonical" href="https://www.smartworkai.pro/" />
     <meta name="robots" content="index, follow" />
-    <meta name="description" content="Transform your workday with AI-powered productivity training. 20+ years procurement expertise meets 4+ years AI specialization. Boost efficiency for all office professionals." />
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,6 +61,7 @@
             </div>
             <nav class="hidden md:flex items-center space-x-8">
                 <a href="#about" class="text-slate-600 hover:text-blue-500 transition" data-key="navAbout">About</a>
+                <a href="#tools" class="text-slate-600 hover:text-blue-500 transition" data-key="navTools">AI Tools</a>
                 <a href="#services" class="text-slate-600 hover:text-blue-500 transition" data-key="navTraining">Training</a>
                 <a href="#benefits" class="text-slate-600 hover:text-blue-500 transition" data-key="navResults">Results</a>
                 <a href="#contact" class="text-slate-600 hover:text-blue-500 transition" data-key="navContact">Contact</a>
@@ -73,6 +86,7 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 flex flex-col space-y-4">
              <a href="#about" class="text-slate-600 hover:text-blue-500 transition" data-key="navAboutMobile">About</a>
+             <a href="#tools" class="text-slate-600 hover:text-blue-500 transition" data-key="navToolsMobile">AI Tools</a>
              <a href="#services" class="text-slate-600 hover:text-blue-500 transition" data-key="navTrainingMobile">Training</a>
              <a href="#benefits" class="text-slate-600 hover:text-blue-500 transition" data-key="navResultsMobile">Results</a>
              <a href="#contact" class="text-slate-600 hover:text-blue-500 transition" data-key="navContactMobile">Contact</a>
@@ -109,7 +123,8 @@
             <div class="container mx-auto px-6">
                 <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16">
                     <div class="md:w-1/3">
-                        <img id="consultant-image" src="trainer-photo.jpg" alt="AI Productivity Consultant" class="rounded-xl shadow-2xl w-full">
+                        <!-- SEO: Improved Alt Text -->
+                        <img id="consultant-image" src="trainer-photo.jpg" alt="Lukasz Julian, expert AI productivity trainer and consultant for office professionals" class="rounded-xl shadow-2xl w-full">
                     </div>
                     <div class="md:w-2/3">
                         <span class="text-blue-500 font-semibold" data-key="aboutTag">Meet Your Trainer</span>
@@ -144,7 +159,8 @@
         <section class="py-20 md:py-28 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4" data-key="problemTitle">Is Your Workflow Working Against You?</h2>
+                    <!-- SEO: Added more specific keyword -->
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4" data-key="problemTitle">Is Your Daily Workflow Working Against You?</h2>
                     <p class="text-lg text-slate-600 mb-12" data-key="problemSubtitle">
                         <!-- JS will populate this -->
                     </p>
@@ -178,7 +194,8 @@
         <!-- Solution Overview -->
         <section class="py-20 md:py-28">
             <div class="container mx-auto px-6 text-center">
-                 <h2 class="text-3xl md:text-4xl font-bold mb-4" data-key="solutionTitle">The AI-Powered Workflow Revolution</h2>
+                 <!-- SEO: Added more specific keyword -->
+                 <h2 class="text-3xl md:text-4xl font-bold mb-4" data-key="solutionTitle">The AI Workflow Automation Revolution</h2>
                  <p class="text-lg text-slate-600 max-w-3xl mx-auto mb-12" data-key="solutionSubtitle">
                     <!-- JS will populate this -->
                  </p>
@@ -210,41 +227,89 @@
             </div>
         </section>
 
+        <!-- UPDATED AI Tools Environment Section -->
+        <section id="tools" class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4" data-key="toolsTitle">Your AI Environment for Peak Productivity</h2>
+                    <p class="text-lg text-slate-600" data-key="toolsSubtitle">We don't just teach theory. We provide hands-on training with a curated suite of the world's leading AI tools, creating a powerful, interconnected ecosystem for any office task.</p>
+                </div>
+                <div class="max-w-6xl mx-auto">
+                     <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-8 items-center">
+                        <!-- Gemini -->
+                        <div class="flex flex-col items-center gap-3 text-center transition-transform hover:scale-105">
+                            <svg class="h-12 w-12 text-gray-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12.11 2.62c.49-.3 1.15-.3 1.64 0l8.15 4.7c.49.3.8.84.8 1.42v9.42c0 .58-.31 1.12-.8 1.42l-8.15 4.7c-.49.3-1.15.3-1.64 0l-8.15-4.7c-.49-.3-.8-.84-.8-1.42V8.75c0-.58.31-1.12.8-1.42l8.15-4.7Z"></path><path d="m11.3 12.01-6.1-3.52v-1.3L11.3 9.9v2.11Zm1.25 0V9.9l6.1-2.71v1.3l-6.1 3.52Zm-7.35.61 7.35 4.24v-2.01l-7.35-4.25v1.92Zm8.6 2.23-7.35-4.25v-1.92l7.35 4.25v2.01Z"></path></svg>
+                            <span class="font-semibold text-sm" data-key="tool1Name">Gemini</span>
+                        </div>
+                        <!-- Claude -->
+                        <div class="flex flex-col items-center gap-3 text-center transition-transform hover:scale-105">
+                             <svg class="h-12 w-12 text-gray-400" viewBox="0 0 256 256" fill="currentColor"><path d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24Zm0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88Zm56-88a56 56 0 0 0-56-56v16a40 40 0 0 1 0 80v16a56 56 0 0 0 56-56Z"></path></svg>
+                            <span class="font-semibold text-sm" data-key="tool2Name">Claude</span>
+                        </div>
+                        <!-- ChatGPT -->
+                        <div class="flex flex-col items-center gap-3 text-center transition-transform hover:scale-105">
+                             <svg class="h-12 w-12 text-gray-400" viewBox="0 0 41 41" fill="currentColor"><path d="M37.532 20.75c0-9.457-7.643-17.1-17.032-17.1-9.39 0-17.032 7.643-17.032 17.1 0 7.355 4.658 13.633 11.11 15.934a1.06 1.06 0 0 0 1.432-.962v-4.043c0-.44.33-.805.761-.88a10.02 10.02 0 0 1 7.458 0c.43.074.761.44.761.88v4.043a1.06 1.06 0 0 0 1.432.962c6.452-2.3 11.11-8.58 11.11-15.934ZM10.468 15.968a3.57 3.57 0 0 1-3.557-3.557 3.57 3.57 0 0 1 3.557-3.557 3.57 3.57 0 0 1 3.557 3.557 3.57 3.57 0 0 1-3.557 3.557Zm20.1 0a3.57 3.57 0 0 1-3.557-3.557 3.57 3.57 0 0 1 3.557-3.557 3.57 3.57 0 0 1 3.557 3.557 3.57 3.57 0 0 1-3.557 3.557Z"></path></svg>
+                            <span class="font-semibold text-sm" data-key="tool3Name">ChatGPT</span>
+                        </div>
+                        <!-- Copilot -->
+                        <div class="flex flex-col items-center gap-3 text-center transition-transform hover:scale-105">
+                            <svg class="h-12 w-12 text-gray-400" viewBox="0 0 256 256" fill="currentColor"><path d="M128 24a104 104 0 1 0 104 104A104.12 104.12 0 0 0 128 24Zm36.43 158.42a12 12 0 0 1-12.86-1.6L128 163.6l-23.57 17.22a12 12 0 0 1-18.43-11.2l6.43-28.82L70 120.35a12 12 0 0 1 6.86-20.75l29.47-2.19L121.65 70a12 12 0 0 1 21.7 0l15.32 27.41 29.47 2.19a12 12 0 0 1 6.86 20.75L172 140.8l6.43 28.82a12 12 0 0 1-5.57 12.8Z"></path></svg>
+                            <span class="font-semibold text-sm" data-key="tool4Name">Copilot</span>
+                        </div>
+                        <!-- Wispr Flow -->
+                        <div class="flex flex-col items-center gap-3 text-center transition-transform hover:scale-105">
+                           <svg class="h-12 w-12 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h2.5"/><path d="M18.5 12H21"/><path d="M7 7h2.5"/><path d="M14.5 17h2.5"/><path d="M7 17h2.5"/><path d="M14.5 7h2.5"/></svg>
+                           <span class="font-semibold text-sm" data-key="tool5Name">Wispr Flow</span>
+                        </div>
+                         <!-- Google AI Studio -->
+                        <div class="flex flex-col items-center gap-3 text-center transition-transform hover:scale-105">
+                            <svg class="h-12 w-12 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.5 21a1.5 1.5 0 0 1-1.5 1.5h-4a1.5 1.5 0 0 1-1.5-1.5V18a1.5 1.5 0 0 1 1.5-1.5h4a1.5 1.5 0 0 1 1.5 1.5v3Z"/><path d="M8.5 8.5a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5V6a1.5 1.5 0 0 1 1.5-1.5h1A1.5 1.5 0 0 1 8.5 6v2.5Z"/><path d="M19.5 8.5a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5V6a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v2.5Z"/><path d="M12 2a1.5 1.5 0 0 1-1.5 1.5h-0a1.5 1.5 0 0 1-1.5-1.5V1.5A1.5 1.5 0 0 1 10.5 0h0A1.5 1.5 0 0 1 12 1.5V2Z"/><path d="M12 22.5a1.5 1.5 0 0 1-1.5 1.5h-0a1.5 1.5 0 0 1-1.5-1.5v-0.5A1.5 1.5 0 0 1 10.5 21h0a1.5 1.5 0 0 1 1.5 1.5v0.5Z"/></svg>
+                             <span class="font-semibold text-sm" data-key="tool6Name">Google AI Studio</span>
+                        </div>
+                         <!-- NotebookLM -->
+                        <div class="flex flex-col items-center gap-3 text-center transition-transform hover:scale-105">
+                            <svg class="h-12 w-12 text-gray-400" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3H5.5A2.5 2.5 0 0 0 3 5.5v13A2.5 2.5 0 0 0 5.5 21h13a2.5 2.5 0 0 0 2.5-2.5V8.207a2.5 2.5 0 0 0-.732-1.768l-3.207-3.207A2.5 2.5 0 0 0 16.5 3Zm-3.5 9.5a.5.5 0 0 1-.5.5h-5a.5.5 0 0 1 0-1h5a.5.5 0 0 1 .5.5Zm0 4a.5.5 0 0 1-.5.5h-5a.5.5 0 0 1 0-1h5a.5.5 0 0 1 .5.5Z"></path></svg>
+                             <span class="font-semibold text-sm" data-key="tool7Name">NotebookLM</span>
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Training Program Details -->
-        <section id="services" class="py-20 md:py-28 bg-white">
+        <section id="services" class="py-20 md:py-28 bg-slate-50">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4" data-key="trainingTitle">Comprehensive AI Productivity Training</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4" data-key="trainingTitle">Comprehensive AI Productivity Training for Office Workers</h2>
                     <p class="text-lg text-slate-600" data-key="trainingSubtitle">Our training is hands-on, interactive, and immediately applicable to your daily work, regardless of your role or industry.</p>
                 </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Cards will be populated by JS -->
-                    <div class="border border-slate-200 rounded-xl p-8 bg-slate-50/50 feature-card">
+                    <div class="border border-slate-200 rounded-xl p-8 bg-white feature-card">
                         <i data-lucide="sparkles" class="w-10 h-10 text-blue-500 mb-4"></i>
                         <h3 class="text-xl font-bold mb-2" data-key="training1Title">The AI Productivity Foundation</h3>
                         <p class="text-slate-600" data-key="training1Desc">Understand the core concepts of personal AI, master prompt engineering, and discover the landscape of powerful tools.</p>
                     </div>
-                    <div class="border border-slate-200 rounded-xl p-8 bg-slate-50/50 feature-card">
+                    <div class="border border-slate-200 rounded-xl p-8 bg-white feature-card">
                          <i data-lucide="file-search-2" class="w-10 h-10 text-blue-500 mb-4"></i>
-                        <h3 class="text-xl font-bold mb-2" data-key="training2Title">Mastering Document Analysis</h3>
+                        <h3 class="text-xl font-bold mb-2" data-key="training2Title">Mastering AI Document Analysis</h3>
                         <p class="text-slate-600" data-key="training2Desc">Learn to summarize, compare, and extract insights from any document—reports, contracts, research papers, and more.</p>
                     </div>
-                    <div class="border border-slate-200 rounded-xl p-8 bg-slate-50/50 feature-card">
+                    <div class="border border-slate-200 rounded-xl p-8 bg-white feature-card">
                         <i data-lucide="pen-tool" class="w-10 h-10 text-blue-500 mb-4"></i>
                         <h3 class="text-xl font-bold mb-2" data-key="training3Title">AI-Assisted Content Creation</h3>
                         <p class="text-slate-600" data-key="training3Desc">Automate the drafting of emails, presentations, reports, and marketing copy tailored to your professional voice.</p>
                     </div>
-                    <div class="border border-slate-200 rounded-xl p-8 bg-slate-50/50 feature-card">
+                    <div class="border border-slate-200 rounded-xl p-8 bg-white feature-card">
                         <i data-lucide="workflow" class="w-10 h-10 text-blue-500 mb-4"></i>
-                        <h3 class="text-xl font-bold mb-2" data-key="training4Title">Automating Your Workflow</h3>
+                        <h3 class="text-xl font-bold mb-2" data-key="training4Title">Automating Your Daily Workflow</h3>
                         <p class="text-slate-600" data-key="training4Desc">Connect AI tools to build custom workflows that handle repetitive tasks from data entry to scheduling.</p>
                     </div>
-                    <div class="border border-slate-200 rounded-xl p-8 bg-slate-50/50 feature-card">
+                    <div class="border border-slate-200 rounded-xl p-8 bg-white feature-card">
                         <i data-lucide="brain-circuit" class="w-10 h-10 text-blue-500 mb-4"></i>
-                        <h3 class="text-xl font-bold mb-2" data-key="training5Title">Strategic Thinking with AI</h3>
+                        <h3 class="text-xl font-bold mb-2" data-key="training5Title">Strategic Thinking with AI Tools</h3>
                         <p class="text-slate-600" data-key="training5Desc">Use AI as a brainstorming partner and strategic analyst to generate innovative ideas and forecast outcomes.</p>
                     </div>
-                    <div class="border border-slate-200 rounded-xl p-8 bg-slate-50/50 feature-card">
+                    <div class="border border-slate-200 rounded-xl p-8 bg-white feature-card">
                         <i data-lucide="shield-check" class="w-10 h-10 text-blue-500 mb-4"></i>
                         <h3 class="text-xl font-bold mb-2" data-key="training6Title">Ethical & Secure AI Usage</h3>
                         <p class="text-slate-600" data-key="training6Desc">Learn best practices for using AI responsibly, protecting sensitive data, and maintaining professional integrity.</p>
@@ -257,7 +322,7 @@
         <section id="benefits" class="py-20 md:py-28">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4" data-key="benefitsTitle">Unlock Quantifiable Results</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4" data-key="benefitsTitle">Unlock Quantifiable Results with AI Automation</h2>
                     <p class="text-lg text-slate-600" data-key="benefitsSubtitle">This isn't just about learning new tools; it's about fundamentally enhancing your professional output and impact.</p>
                 </div>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -403,13 +468,16 @@
         // Translations Object
         const translations = {
             en: {
-                pageTitle: "AI-Powered Productivity for the Modern Professional",
+                pageTitle: "AI Productivity Training for Office Professionals | SmartWorkAI",
+                metaDescription: "Boost your office productivity with expert AI training. Learn to automate workflows, analyze documents, and save 10+ hours a week. For knowledge workers.",
                 navAbout: "About",
+                navTools: "AI Tools",
                 navTraining: "Training",
                 navResults: "Results",
                 navContact: "Contact",
                 getStarted: "Get Started",
                 navAboutMobile: "About",
+                navToolsMobile: "AI Tools",
                 navTrainingMobile: "Training",
                 navResultsMobile: "Results",
                 navContactMobile: "Contact",
@@ -425,7 +493,7 @@
                 aboutStat2: "<strong>4+ Years</strong> in Applied AI Specialization",
                 aboutStat3: "Certified AI Practitioner",
                 aboutStat4: "500+ Professionals Trained",
-                problemTitle: "Is Your Workflow Working Against You?",
+                problemTitle: "Is Your Daily Workflow Working Against You?",
                 problemSubtitle: "In today's fast-paced environment, knowledge workers are constantly bogged down by tasks that drain time and energy, stifling strategic thinking and innovation.",
                 problem1Title: "Endless Document Juggling",
                 problem1Desc: "Spending hours comparing reports, summarizing meeting notes, and analyzing strategic documents instead of acting on insights.",
@@ -433,28 +501,37 @@
                 problem2Desc: "Wasting precious creative energy drafting routine emails, presentations, and summaries from scratch every single time.",
                 problem3Title: "Information Overload",
                 problem3Desc: "Struggling to extract key information and actionable tasks from a constant firehose of data across multiple platforms and formats.",
-                solutionTitle: "The AI-Powered Workflow Revolution",
+                solutionTitle: "The AI Workflow Automation Revolution",
                 solutionSubtitle: "AI isn't about replacing you. It's about augmenting your abilities, automating the mundane, and freeing you to do your best, most impactful work. The same AI principles that streamline multi-million dollar contracts can revolutionize your daily to-do list.",
                 solutionBoxTitle: "From Manual Grind to <span class='text-blue-500'>AI-Assisted Flow</span>",
                 solutionBefore1: "<strong class='font-semibold'>Before:</strong> Manually comparing versions of a strategy plan, line by line.",
                 solutionAfter1: "<strong class='font-semibold'>After:</strong> Instantly generating a summary of changes, key differences, and potential impacts with an AI assistant.",
                 solutionBefore2: "<strong class='font-semibold'>Before:</strong> Spending an hour building a project update presentation deck.",
                 solutionAfter2: "<strong class='font-semibold'>After:</strong> Creating a polished first draft in minutes by feeding key data points to an AI content generator.",
-                trainingTitle: "Comprehensive AI Productivity Training",
+                toolsTitle: "Your AI Environment for Peak Productivity",
+                toolsSubtitle: "We don't just teach theory. We provide hands-on training with a curated suite of the world's leading AI tools, creating a powerful, interconnected ecosystem for any office task.",
+                tool1Name: "Gemini",
+                tool2Name: "Claude",
+                tool3Name: "ChatGPT",
+                tool4Name: "Copilot",
+                tool5Name: "Wispr Flow",
+                tool6Name: "Google AI Studio",
+                tool7Name: "NotebookLM",
+                trainingTitle: "Comprehensive AI Productivity Training for Office Workers",
                 trainingSubtitle: "Our training is hands-on, interactive, and immediately applicable to your daily work, regardless of your role or industry.",
                 training1Title: "The AI Productivity Foundation",
                 training1Desc: "Understand the core concepts of personal AI, master prompt engineering, and discover the landscape of powerful tools.",
-                training2Title: "Mastering Document Analysis",
+                training2Title: "Mastering AI Document Analysis",
                 training2Desc: "Learn to summarize, compare, and extract insights from any document—reports, contracts, research papers, and more.",
                 training3Title: "AI-Assisted Content Creation",
                 training3Desc: "Automate the drafting of emails, presentations, reports, and marketing copy tailored to your professional voice.",
-                training4Title: "Automating Your Workflow",
+                training4Title: "Automating Your Daily Workflow",
                 training4Desc: "Connect AI tools to build custom workflows that handle repetitive tasks from data entry to scheduling.",
-                training5Title: "Strategic Thinking with AI",
+                training5Title: "Strategic Thinking with AI Tools",
                 training5Desc: "Use AI as a brainstorming partner and strategic analyst to generate innovative ideas and forecast outcomes.",
                 training6Title: "Ethical & Secure AI Usage",
                 training6Desc: "Learn best practices for using AI responsibly, protecting sensitive data, and maintaining professional integrity.",
-                benefitsTitle: "Unlock Quantifiable Results",
+                benefitsTitle: "Unlock Quantifiable Results with AI Automation",
                 benefitsSubtitle: "This isn't just about learning new tools; it's about fundamentally enhancing your professional output and impact.",
                 benefit1Title: "Hours Saved Weekly",
                 benefit1Desc: "By automating repetitive administrative and content-related tasks.",
@@ -486,13 +563,16 @@
                 footerRights: "&copy; 2025 ProductivityAI. All rights reserved.",
             },
             de: {
-                pageTitle: "KI-gestützte Produktivität für den modernen Berufstätigen",
+                pageTitle: "KI Produktivitätstraining für Büroangestellte | SmartWorkAI",
+                metaDescription: "Steigern Sie Ihre Büro-Produktivität mit Experten-KI-Training. Lernen Sie, Workflows zu automatisieren, Dokumente zu analysieren und 10+ Stunden pro Woche zu sparen.",
                 navAbout: "Über uns",
+                navTools: "KI-Tools",
                 navTraining: "Training",
                 navResults: "Ergebnisse",
                 navContact: "Kontakt",
                 getStarted: "Jetzt loslegen",
                 navAboutMobile: "Über uns",
+                navToolsMobile: "KI-Tools",
                 navTrainingMobile: "Training",
                 navResultsMobile: "Ergebnisse",
                 navContactMobile: "Kontakt",
@@ -508,7 +588,7 @@
                 aboutStat2: "<strong>4+ Jahre</strong> in angewandter KI-Spezialisierung",
                 aboutStat3: "Zertifizierter KI-Praktiker",
                 aboutStat4: "Über 500 Fachleute geschult",
-                problemTitle: "Arbeitet Ihr Workflow gegen Sie?",
+                problemTitle: "Arbeitet Ihr täglicher Workflow gegen Sie?",
                 problemSubtitle: "In der heutigen schnelllebigen Umgebung werden Wissensarbeiter ständig von Aufgaben aufgehalten, die Zeit und Energie rauben und strategisches Denken und Innovation behindern.",
                 problem1Title: "Endloses Dokumenten-Jonglieren",
                 problem1Desc: "Stundenlanges Vergleichen von Berichten, Zusammenfassen von Besprechungsnotizen und Analysieren strategischer Dokumente, anstatt auf Erkenntnisse zu reagieren.",
@@ -516,28 +596,37 @@
                 problem2Desc: "Wertvolle kreative Energie wird verschwendet, indem routinemäßige E-Mails, Präsentationen und Zusammenfassungen jedes Mal von Grund auf neu erstellt werden.",
                 problem3Title: "Informationsüberflutung",
                 problem3Desc: "Schwierigkeiten, wichtige Informationen und umsetzbare Aufgaben aus einer ständigen Datenflut über mehrere Plattformen und Formate hinweg zu extrahieren.",
-                solutionTitle: "Die Revolution des KI-gestützten Workflows",
+                solutionTitle: "Die Revolution der KI-Workflow-Automatisierung",
                 solutionSubtitle: "Bei KI geht es nicht darum, Sie zu ersetzen. Es geht darum, Ihre Fähigkeiten zu erweitern, das Alltägliche zu automatisieren und Ihnen die Freiheit zu geben, Ihre beste und wirkungsvollste Arbeit zu leisten. Dieselben KI-Prinzipien, die millionenschwere Verträge optimieren, können auch Ihre tägliche To-Do-Liste revolutionieren.",
                 solutionBoxTitle: "Von manueller Plackerei zu <span class='text-blue-500'>KI-gestütztem Flow</span>",
                 solutionBefore1: "<strong class='font-semibold'>Vorher:</strong> Manuelles, zeilenweises Vergleichen von Versionen eines Strategieplans.",
                 solutionAfter1: "<strong class='font-semibold'>Nachher:</strong> Sofortige Erstellung einer Zusammenfassung der Änderungen, Hauptunterschiede und potenziellen Auswirkungen mit einem KI-Assistenten.",
                 solutionBefore2: "<strong class='font-semibold'>Vorher:</strong> Eine Stunde für die Erstellung einer Projekt-Update-Präsentation aufwenden.",
                 solutionAfter2: "<strong class='font-semibold'>Nachher:</strong> Erstellen Sie in wenigen Minuten einen ausgefeilten ersten Entwurf, indem Sie einem KI-Inhaltsgenerator wichtige Datenpunkte zuführen.",
-                trainingTitle: "Umfassendes KI-Produktivitätstraining",
+                toolsTitle: "Ihre KI-Umgebung für Spitzenproduktivität",
+                toolsSubtitle: "Wir unterrichten nicht nur Theorie. Wir bieten praxisnahes Training mit einer kuratierten Auswahl der weltweit führenden KI-Tools und schaffen so ein leistungsstarkes, vernetztes Ökosystem für jede Büroaufgabe.",
+                tool1Name: "Gemini",
+                tool2Name: "Claude",
+                tool3Name: "ChatGPT",
+                tool4Name: "Copilot",
+                tool5Name: "Wispr Flow",
+                tool6Name: "Google AI Studio",
+                tool7Name: "NotebookLM",
+                trainingTitle: "Umfassendes KI-Produktivitätstraining für Büroangestellte",
                 trainingSubtitle: "Unser Training ist praxisnah, interaktiv und sofort auf Ihre tägliche Arbeit anwendbar, unabhängig von Ihrer Rolle oder Branche.",
                 training1Title: "Die KI-Produktivitätsgrundlage",
                 training1Desc: "Verstehen Sie die Kernkonzepte der persönlichen KI, lernen Sie Prompt-Engineering und entdecken Sie die Landschaft leistungsstarker Werkzeuge.",
-                training2Title: "Meisterung der Dokumentenanalyse",
+                training2Title: "Meisterung der KI-Dokumentenanalyse",
                 training2Desc: "Lernen Sie, jedes Dokument zusammenzufassen, zu vergleichen und Erkenntnisse daraus zu gewinnen – Berichte, Verträge, Forschungsarbeiten und mehr.",
                 training3Title: "KI-gestützte Inhaltserstellung",
                 training3Desc: "Automatisieren Sie die Erstellung von E-Mails, Präsentationen, Berichten und Marketingtexten, die auf Ihre professionelle Stimme zugeschnitten sind.",
-                training4Title: "Automatisierung Ihres Workflows",
+                training4Title: "Automatisierung Ihres täglichen Workflows",
                 training4Desc: "Verbinden Sie KI-Tools, um benutzerdefinierte Workflows zu erstellen, die repetitive Aufgaben von der Dateneingabe bis zur Terminplanung erledigen.",
-                training5Title: "Strategisches Denken mit KI",
+                training5Title: "Strategisches Denken mit KI-Tools",
                 training5Desc: "Nutzen Sie KI als Brainstorming-Partner und strategischen Analysten, um innovative Ideen zu generieren und Ergebnisse zu prognostizieren.",
                 training6Title: "Ethische & sichere KI-Nutzung",
                 training6Desc: "Lernen Sie Best Practices für den verantwortungsvollen Umgang mit KI, den Schutz sensibler Daten und die Wahrung beruflicher Integrität.",
-                benefitsTitle: "Erschließen Sie quantifizierbare Ergebnisse",
+                benefitsTitle: "Erschließen Sie quantifizierbare Ergebnisse mit KI-Automatisierung",
                 benefitsSubtitle: "Hier geht es nicht nur darum, neue Werkzeuge zu erlernen; es geht darum, Ihre berufliche Leistung und Ihren Einfluss grundlegend zu verbessern.",
                 benefit1Title: "Stunden pro Woche gespart",
                 benefit1Desc: "Durch die Automatisierung repetitiver administrativer und inhaltsbezogener Aufgaben.",
@@ -569,13 +658,16 @@
                 footerRights: "&copy; 2025 ProductivityAI. Alle Rechte vorbehalten.",
             },
             pl: {
-                pageTitle: "Produktywność oparta na AI dla nowoczesnego profesjonalisty",
+                pageTitle: "Szkolenie z Produktywności AI dla Pracowników Biurowych | SmartWorkAI",
+                metaDescription: "Zwiększ swoją produktywność w biurze dzięki eksperckim szkoleniom AI. Naucz się automatyzować przepływy pracy, analizować dokumenty i oszczędzać 10+ godzin tygodniowo.",
                 navAbout: "O nas",
+                navTools: "Narzędzia AI",
                 navTraining: "Szkolenia",
                 navResults: "Wyniki",
                 navContact: "Kontakt",
                 getStarted: "Zacznij teraz",
                 navAboutMobile: "O nas",
+                navToolsMobile: "Narzędzia AI",
                 navTrainingMobile: "Szkolenia",
                 navResultsMobile: "Wyniki",
                 navContactMobile: "Kontakt",
@@ -591,7 +683,7 @@
                 aboutStat2: "<strong>4+ lata</strong> specjalizacji w stosowanej AI",
                 aboutStat3: "Certyfikowany Praktyk AI",
                 aboutStat4: "Przeszkolono ponad 500 profesjonalistów",
-                problemTitle: "Czy Twój przepływ pracy działa przeciwko Tobie?",
+                problemTitle: "Czy Twój codzienny przepływ pracy działa przeciwko Tobie?",
                 problemSubtitle: "W dzisiejszym dynamicznym środowisku, pracownicy umysłowi są nieustannie obciążeni zadaniami, które pochłaniają czas i energię, hamując strategiczne myślenie i innowacje.",
                 problem1Title: "Niekończące się żonglowanie dokumentami",
                 problem1Desc: "Spędzanie godzin na porównywaniu raportów, podsumowywaniu notatek ze spotkań i analizowaniu dokumentów strategicznych zamiast działania na podstawie wniosków.",
@@ -599,28 +691,37 @@
                 problem2Desc: "Marnowanie cennej energii twórczej na pisanie rutynowych e-maili, prezentacji i podsumowań od zera za każdym razem.",
                 problem3Title: "Przeładowanie informacjami",
                 problem3Desc: "Trudności z wydobyciem kluczowych informacji i zadań do wykonania z ciągłego potoku danych na różnych platformach i w różnych formatach.",
-                solutionTitle: "Rewolucja w przepływie pracy wspomaganym przez AI",
+                solutionTitle: "Rewolucja w Automatyzacji Przepływu Pracy z AI",
                 solutionSubtitle: "AI nie ma na celu Cię zastąpić. Chodzi o wzmocnienie Twoich umiejętności, automatyzację przyziemnych zadań i uwolnienie Cię, abyś mógł wykonywać swoją najlepszą, najbardziej wpływową pracę. Te same zasady AI, które usprawniają wielomilionowe kontrakty, mogą zrewolucjonizować Twoją codzienną listę zadań.",
                 solutionBoxTitle: "Od ręcznej harówki do <span class='text-blue-500'>płynności napędzanej przez AI</span>",
                 solutionBefore1: "<strong class='font-semibold'>Przed:</strong> Ręczne, linijka po linijce, porównywanie wersji planu strategicznego.",
                 solutionAfter1: "<strong class='font-semibold'>Po:</strong> Błyskawiczne generowanie podsumowania zmian, kluczowych różnic i potencjalnych skutków za pomocą asystenta AI.",
                 solutionBefore2: "<strong class='font-semibold'>Przed:</strong> Spędzanie godziny na przygotowywaniu prezentacji z aktualizacją projektu.",
                 solutionAfter2: "<strong class='font-semibold'>Po:</strong> Stwórz dopracowany pierwszy szkic w ciągu kilku minut, dostarczając kluczowe dane do generatora treści AI.",
-                trainingTitle: "Kompleksowe szkolenie z produktywności AI",
+                toolsTitle: "Twoje środowisko AI dla maksymalnej produktywności",
+                toolsSubtitle: "Nie uczymy tylko teorii. Zapewniamy praktyczne szkolenia z wykorzystaniem starannie dobranego zestawu wiodących na świecie narzędzi AI, tworząc potężny, połączony ekosystem do każdego zadania biurowego.",
+                tool1Name: "Gemini",
+                tool2Name: "Claude",
+                tool3Name: "ChatGPT",
+                tool4Name: "Copilot",
+                tool5Name: "Wispr Flow",
+                tool6Name: "Google AI Studio",
+                tool7Name: "NotebookLM",
+                trainingTitle: "Kompleksowe szkolenie z produktywności AI dla pracowników biurowych",
                 trainingSubtitle: "Nasze szkolenie jest praktyczne, interaktywne i ma natychmiastowe zastosowanie w codziennej pracy, niezależnie od Twojej roli czy branży.",
                 training1Title: "Fundamenty Produktywności AI",
                 training1Desc: "Zrozum podstawowe koncepcje osobistej AI, naucz się inżynierii promptów i odkryj krajobraz potężnych narzędzi.",
-                training2Title: "Mistrzostwo w Analizie Dokumentów",
+                training2Title: "Mistrzostwo w Analizie Dokumentów z AI",
                 training2Desc: "Naucz się podsumowywać, porównywać i wyciągać wnioski z dowolnego dokumentu — raportów, umów, badań naukowych i innych.",
                 training3Title: "Tworzenie Treści Wspomagane przez AI",
                 training3Desc: "Zautomatyzuj tworzenie e-maili, prezentacji, raportów i tekstów marketingowych, dostosowanych do Twojego profesjonalnego głosu.",
-                training4Title: "Automatyzacja Przepływu Pracy",
+                training4Title: "Automatyzacja Codziennego Przepływu Pracy",
                 training4Desc: "Połącz narzędzia AI, aby budować niestandardowe przepływy pracy, które obsługują powtarzalne zadania, od wprowadzania danych po planowanie.",
-                training5Title: "Strategiczne Myślenie z AI",
+                training5Title: "Strategiczne Myślenie z Narzędziami AI",
                 training5Desc: "Używaj AI jako partnera do burzy mózgów i analityka strategicznego, aby generować innowacyjne pomysły i prognozować wyniki.",
                 training6Title: "Etyczne i Bezpieczne Użycie AI",
                 training6Desc: "Poznaj najlepsze praktyki odpowiedzialnego korzystania z AI, ochrony wrażliwych danych i zachowania profesjonalnej integralności.",
-                benefitsTitle: "Osiągnij wymierne rezultaty",
+                benefitsTitle: "Osiągnij wymierne rezultaty dzięki Automatyzacji AI",
                 benefitsSubtitle: "Nie chodzi tylko o naukę nowych narzędzi; chodzi o fundamentalne ulepszenie Twojej profesjonalnej wydajności i wpływu.",
                 benefit1Title: "Godzin oszczędzonych tygodniowo",
                 benefit1Desc: "Dzięki automatyzacji powtarzalnych zadań administracyjnych i związanych z treścią.",
@@ -661,9 +762,14 @@
 
         function applyTranslations(lang) {
             document.documentElement.lang = lang;
+            
+            // Update all text elements
             document.querySelectorAll('[data-key]').forEach(element => {
                 const key = element.getAttribute('data-key');
-                if (translations[lang] && translations[lang][key]) {
+                if (key === 'metaDescription') {
+                    // SEO: Update the meta description tag's content attribute
+                    document.querySelector('meta[name="description"]').setAttribute('content', translations[lang][key]);
+                } else if (translations[lang] && translations[lang][key]) {
                     element.innerHTML = translations[lang][key];
                 }
             });
@@ -673,7 +779,6 @@
             if (currentLangElement) {
                 currentLangElement.textContent = lang.toUpperCase();
             }
-
         }
 
         document.addEventListener('DOMContentLoaded', () => {
