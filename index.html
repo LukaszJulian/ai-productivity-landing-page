@@ -687,10 +687,11 @@
         };
 
         // Language Switcher Logic
-        function setLanguage(lang) {
+        window.setLanguage = function(lang) {
             localStorage.setItem('language', lang);
             applyTranslations(lang);
         }
+            }
 
         function applyTranslations(lang) {
             document.documentElement.lang = lang;
