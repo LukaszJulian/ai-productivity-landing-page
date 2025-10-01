@@ -59,51 +59,51 @@
 <body class="text-slate-800">
 
     <!-- Header -->
-    <header class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 shadow-sm">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-500"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/><path d="m12 20 4-4"/></svg>
-                <span class="text-xl font-bold">SmartWork<span class="text-blue-500">AI</span></span>
-            </div>
-            <nav class="hidden md:flex items-center space-x-8">
-                <a href="#about" class="text-slate-600 hover:text-blue-500 transition" data-key="navAbout">About</a>
-                <a href="#tools" class="text-slate-600 hover:text-blue-500 transition" data-key="navTools">AI Tools</a>
-                <a href="#services" class="text-slate-600 hover:text-blue-500 transition" data-key="navTraining">Training</a>
-                <a href="#benefits" class="text-slate-600 hover:text-blue-500 transition" data-key="navResults">Results</a>
-                <a href="#contact" class="text-slate-600 hover:text-blue-500 transition" data-key="navContact">Contact</a>
-                <div class="relative" x-data="{ open: false }" @click.away="open = false">
-                    <button @click="open = !open" class="flex items-center text-slate-600 hover:text-blue-500 transition">
-                        <i data-lucide="globe" class="w-5 h-5 mr-1"></i>
-                        <span id="current-lang">EN</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
-                    </button>
-                    <div x-show="open" x-transition class="absolute right-0 mt-2 w-28 bg-white rounded-md shadow-lg py-1 z-20">
-                        <a href="#" class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100" @click.prevent="setLanguage('en'); open = false;">English</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100" @click.prevent="setLanguage('de'); open = false;">Deutsch</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100" @click.prevent="setLanguage('pl'); open = false;">Polski</a>
-                    </div>
+<header class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 shadow-sm">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center space-x-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-500"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/><path d="m12 20 4-4"/></svg>
+            <span class="text-xl font-bold">SmartWork<span class="text-blue-500">AI</span></span>
+        </div>
+        <nav class="hidden md:flex items-center space-x-8">
+            <a href="#about" class="text-slate-600 hover:text-blue-500 transition" data-key="navAbout">About</a>
+            <a href="#tools" class="text-slate-600 hover:text-blue-500 transition" data-key="navTools">AI Tools</a>
+            <a href="#services" class="text-slate-600 hover:text-blue-500 transition" data-key="navTraining">Training</a>
+            <a href="#benefits" class="text-slate-600 hover:text-blue-500 transition" data-key="navResults">Results</a>
+            <a href="#contact" class="text-slate-600 hover:text-blue-500 transition" data-key="navContact">Contact</a>
+            <div class="relative" x-data="{ open: false }" @click.away="open = false">
+                <button @click="open = !open" class="flex items-center text-slate-600 hover:text-blue-500 transition">
+                    <i data-lucide="globe" class="w-5 h-5 mr-1"></i>
+                    <span id="current-lang">EN</span>
+                    <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
+                </button>
+                <div x-show="open" x-transition class="absolute right-0 mt-2 w-28 bg-white rounded-md shadow-lg py-1 z-20">
+                    <a href="#" class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100" @click.prevent="window.setLanguage('en'); open = false;">English</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100" @click.prevent="window.setLanguage('de'); open = false;">Deutsch</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100" @click.prevent="window.setLanguage('pl'); open = false;">Polski</a>
                 </div>
-            </nav>
-            <a href="#contact" class="hidden md:inline-block bg-slate-800 text-white px-5 py-2 rounded-lg font-medium hover:bg-slate-700 transition" data-key="getStarted">Get Started</a>
-            <button id="mobile-menu-button" class="md:hidden">
-                <i data-lucide="menu"></i>
-            </button>
-        </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 flex flex-col space-y-4">
-             <a href="#about" class="text-slate-600 hover:text-blue-500 transition" data-key="navAboutMobile">About</a>
-             <a href="#tools" class="text-slate-600 hover:text-blue-500 transition" data-key="navToolsMobile">AI Tools</a>
-             <a href="#services" class="text-slate-600 hover:text-blue-500 transition" data-key="navTrainingMobile">Training</a>
-             <a href="#benefits" class="text-slate-600 hover:text-blue-500 transition" data-key="navResultsMobile">Results</a>
-             <a href="#contact" class="text-slate-600 hover:text-blue-500 transition" data-key="navContactMobile">Contact</a>
-             <hr/>
-             <a href="#" class="text-slate-600 hover:text-blue-500 transition" @click.prevent="setLanguage('en')">English</a>
-             <a href="#" class="text-slate-600 hover:text-blue-500 transition" @click.prevent="setLanguage('de')">Deutsch</a>
-             <a href="#" class="text-slate-600 hover:text-blue-500 transition" @click.prevent="setLanguage('pl')">Polski</a>
-             <hr/>
-             <a href="#contact" class="bg-blue-500 text-white text-center px-5 py-2 rounded-lg font-medium hover:bg-blue-600 transition" data-key="getStartedMobile">Get Started</a>
-        </div>
-    </header>
+            </div>
+        </nav>
+        <a href="#contact" class="hidden md:inline-block bg-slate-800 text-white px-5 py-2 rounded-lg font-medium hover:bg-slate-700 transition" data-key="getStarted">Get Started</a>
+        <button id="mobile-menu-button" class="md:hidden">
+            <i data-lucide="menu"></i>
+        </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 flex flex-col space-y-4">
+         <a href="#about" class="text-slate-600 hover:text-blue-500 transition" data-key="navAboutMobile">About</a>
+         <a href="#tools" class="text-slate-600 hover:text-blue-500 transition" data-key="navToolsMobile">AI Tools</a>
+         <a href="#services" class="text-slate-600 hover:text-blue-500 transition" data-key="navTrainingMobile">Training</a>
+         <a href="#benefits" class="text-slate-600 hover:text-blue-500 transition" data-key="navResultsMobile">Results</a>
+         <a href="#contact" class="text-slate-600 hover:text-blue-500 transition" data-key="navContactMobile">Contact</a>
+         <hr/>
+         <a href="#" class="text-slate-600 hover:text-blue-500 transition" @click.prevent="window.setLanguage('en')">English</a>
+         <a href="#" class="text-slate-600 hover:text-blue-500 transition" @click.prevent="window.setLanguage('de')">Deutsch</a>
+         <a href="#" class="text-slate-600 hover:text-blue-500 transition" @click.prevent="window.setLanguage('pl')">Polski</a>
+         <hr/>
+         <a href="#contact" class="bg-blue-500 text-white text-center px-5 py-2 rounded-lg font-medium hover:bg-blue-600 transition" data-key="getStartedMobile">Get Started</a>
+    </div>
+</header>
 
     <main>
         <!-- Hero Section -->
