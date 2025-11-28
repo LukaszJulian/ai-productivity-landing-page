@@ -782,7 +782,7 @@
             </div>
         </section>
 
-        <!-- Contact Section with Form (from main branch) -->
+        <!-- Contact Form Section -->
         <section id="contact" class="py-20 md:py-28 bg-slate-800 text-white">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
@@ -896,11 +896,21 @@
                         </p>
                     </form>
 
-                    <!-- Optional: Link to booking calendar -->
-                    <div class="text-center mt-8">
-                        <p class="text-slate-300 mb-4">Or schedule a call directly:</p>
-                        <a href="https://calendar.app.google/n1fxohs2CJfJ8yut5" target="_blank" class="inline-block bg-white text-slate-800 px-8 py-3 rounded-lg font-semibold hover:bg-slate-200 transition" data-key="contactCalendar">
-                            Book a Call
+                    <!-- Alternative Contact Options -->
+                    <div class="mt-12 grid md:grid-cols-2 gap-6">
+                        <a href="mailto:contact@smartworkai.pro" class="bg-slate-700 hover:bg-slate-600 transition p-6 rounded-lg flex items-center gap-4">
+                            <i data-lucide="mail" class="w-8 h-8 text-blue-400"></i>
+                            <div>
+                                <h4 class="font-semibold mb-1" data-key="contactEmail">Email Us</h4>
+                                <p class="text-slate-300 text-sm">contact@smartworkai.pro</p>
+                            </div>
+                        </a>
+                        <a href="https://calendar.app.google/n1fxohs2CJfJ8yut5" target="_blank" class="bg-slate-700 hover:bg-slate-600 transition p-6 rounded-lg flex items-center gap-4">
+                            <i data-lucide="calendar" class="w-8 h-8 text-teal-400"></i>
+                            <div>
+                                <h4 class="font-semibold mb-1" data-key="contactCalendar">Book a Call</h4>
+                                <p class="text-slate-300 text-sm" data-key="contactCalendarDesc">Schedule a free consultation</p>
+                            </div>
                         </a>
                     </div>
                 </div>
@@ -1329,7 +1339,9 @@
                 formMessagePlaceholder: "Tell us about your needs and how we can help you...",
                 formSubmit: "Send Message",
                 formPrivacy: "Your information is safe with us and will never be shared with third parties.",
+                contactEmail: "Email Us",
                 contactCalendar: "Book a Call",
+                contactCalendarDesc: "Schedule a free consultation",
             },
             de: {
                 pageTitle: "KI Produktivitätstraining für Büroangestellte | SmartWorkAI",
@@ -1446,6 +1458,27 @@
                 ctaSubtitle: "Machen Sie den ersten Schritt, um ein KI-gestützter Profi zu werden. Wählen Sie den für Sie richtigen Weg und beginnen Sie noch heute Ihre Transformation.",
                 ctaButton1: "Kontaktieren Sie uns",
                 ctaButton2: "Kostenlose Beratung buchen",
+                contactTitle: "Kontaktieren Sie uns",
+                contactSubtitle: "Bereit, Ihre Produktivität zu transformieren? Füllen Sie das Formular aus und wir melden uns innerhalb von 24 Stunden bei Ihnen.",
+                formSuccessTitle: "Nachricht erfolgreich gesendet!",
+                formSuccessMessage: "Vielen Dank für Ihre Kontaktaufnahme. Wir melden uns bald bei Ihnen.",
+                formErrorTitle: "Hoppla! Etwas ist schief gelaufen",
+                formErrorMessage: "Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt unter contact@smartworkai.pro",
+                formFirstName: "Vorname *",
+                formFirstNamePlaceholder: "Max",
+                formLastName: "Nachname *",
+                formLastNamePlaceholder: "Mustermann",
+                formEmail: "E-Mail *",
+                formEmailPlaceholder: "max.mustermann@firma.de",
+                formPhone: "Telefon",
+                formPhonePlaceholder: "+49 123 456 789",
+                formMessage: "Nachricht *",
+                formMessagePlaceholder: "Erzählen Sie uns von Ihren Anforderungen und wie wir Ihnen helfen können...",
+                formSubmit: "Nachricht senden",
+                formPrivacy: "Ihre Daten sind bei uns sicher und werden niemals an Dritte weitergegeben.",
+                contactEmail: "E-Mail senden",
+                contactCalendar: "Anruf buchen",
+                contactCalendarDesc: "Kostenlose Beratung vereinbaren",
                 footerRights: "&copy; 2025 ProductivityAI. Alle Rechte vorbehalten.",
             },
             pl: {
@@ -1563,6 +1596,27 @@
                 ctaSubtitle: "Zrób pierwszy krok w kierunku stania się profesjonalistą wspieranym przez AI. Wybierz ścieżkę odpowiednią dla siebie i rozpocznij swoją transformację już dziś.",
                 ctaButton1: "Napisz do nas",
                 ctaButton2: "Zarezerwuj bezpłatną konsultację",
+                contactTitle: "Skontaktuj się z nami",
+                contactSubtitle: "Gotowy na transformację produktywności? Wypełnij formularz, a odezwiemy się w ciągu 24 godzin.",
+                formSuccessTitle: "Wiadomość wysłana pomyślnie!",
+                formSuccessMessage: "Dziękujemy za kontakt. Odpowiemy wkrótce.",
+                formErrorTitle: "Ups! Coś poszło nie tak",
+                formErrorMessage: "Spróbuj ponownie lub skontaktuj się z nami bezpośrednio: contact@smartworkai.pro",
+                formFirstName: "Imię *",
+                formFirstNamePlaceholder: "Jan",
+                formLastName: "Nazwisko *",
+                formLastNamePlaceholder: "Kowalski",
+                formEmail: "E-mail *",
+                formEmailPlaceholder: "jan.kowalski@firma.pl",
+                formPhone: "Telefon",
+                formPhonePlaceholder: "+48 123 456 789",
+                formMessage: "Wiadomość *",
+                formMessagePlaceholder: "Opowiedz nam o swoich potrzebach i jak możemy Ci pomóc...",
+                formSubmit: "Wyślij wiadomość",
+                formPrivacy: "Twoje dane są u nas bezpieczne i nigdy nie będą udostępniane osobom trzecim.",
+                contactEmail: "Napisz e-mail",
+                contactCalendar: "Umów rozmowę",
+                contactCalendarDesc: "Zarezerwuj bezpłatną konsultację",
                 footerRights: "&copy; 2025 ProductivityAI. Wszelkie prawa zastrzeżone.",
             }
         };
@@ -1575,7 +1629,7 @@
 
         function applyTranslations(lang) {
             document.documentElement.lang = lang;
-            
+
             // Update all text elements
             document.querySelectorAll('[data-key]').forEach(element => {
                 const key = element.getAttribute('data-key');
@@ -1583,7 +1637,15 @@
                     element.innerHTML = translations[lang][key];
                 }
             });
-            
+
+            // Update all placeholder elements
+            document.querySelectorAll('[data-key-placeholder]').forEach(element => {
+                const key = element.getAttribute('data-key-placeholder');
+                if (translations[lang] && translations[lang][key]) {
+                    element.placeholder = translations[lang][key];
+                }
+            });
+
             // Update the language display in the header
             const currentLangElement = document.getElementById('current-lang');
             if (currentLangElement) {
@@ -1610,12 +1672,72 @@
                     const answer = item.querySelector('.faq-answer');
                     const icon = question.querySelector('i');
                     const isVisible = !answer.classList.contains('hidden');
-                    
+
                     answer.classList.toggle('hidden');
                     icon.classList.toggle('rotate-180', !isVisible);
                 });
             });
-            
+
+            // Contact Form Handling
+            const contactForm = document.getElementById('contact-form');
+            const formSuccess = document.getElementById('form-success');
+            const formError = document.getElementById('form-error');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+
+                    // Get form data
+                    const formData = new FormData(contactForm);
+
+                    try {
+                        // Submit to Formspree
+                        const response = await fetch(contactForm.action, {
+                            method: 'POST',
+                            body: formData,
+                            headers: {
+                                'Accept': 'application/json'
+                            }
+                        });
+
+                        if (response.ok) {
+                            // Show success message
+                            formSuccess.classList.remove('hidden');
+                            formError.classList.add('hidden');
+                            contactForm.reset();
+
+                            // Re-render icons after reset
+                            lucide.createIcons();
+
+                            // Scroll to success message
+                            formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                            // Hide success message after 10 seconds
+                            setTimeout(() => {
+                                formSuccess.classList.add('hidden');
+                            }, 10000);
+                        } else {
+                            throw new Error('Form submission failed');
+                        }
+                    } catch (error) {
+                        // Show error message
+                        formError.classList.remove('hidden');
+                        formSuccess.classList.add('hidden');
+
+                        // Re-render icons
+                        lucide.createIcons();
+
+                        // Scroll to error message
+                        formError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                        // Hide error message after 10 seconds
+                        setTimeout(() => {
+                            formError.classList.add('hidden');
+                        }, 10000);
+                    }
+                });
+            }
+
             // Set initial language
             const savedLang = localStorage.getItem('language') || 'en';
             setLanguage(savedLang);
