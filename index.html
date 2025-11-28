@@ -201,11 +201,20 @@
                     <i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i>
                     <span>Trusted by professionals at 10+ mid-to-large companies</span>
                 </p>
+                <!-- LEAD MAGNET BUTTON DISABLED - Uncomment when PDF toolkit is ready
                 <button onclick="openLeadMagnet()" class="bg-blue-500 text-white px-8 py-4 rounded-lg font-semibold text-lg cta-button inline-block" data-key="heroCta">
                     Get Free AI Toolkit + Consultation
                 </button>
                 <p class="mt-4 text-sm text-slate-500" data-key="heroSubCta">
                     Download our 15-page guide: "ChatGPT Prompts for Office Productivity" + book your strategy session
+                </p>
+                -->
+                <!-- Temporary CTA while PDF toolkit is being created -->
+                <a href="#contact" class="bg-blue-500 text-white px-8 py-4 rounded-lg font-semibold text-lg cta-button inline-block">
+                    Get Started Today
+                </a>
+                <p class="mt-4 text-sm text-slate-500">
+                    Book a free consultation to transform your productivity with AI
                 </p>
             </div>
         </section>
@@ -349,9 +358,15 @@
                 <p class="max-w-3xl mx-auto text-lg mb-8" data-key="roiDescription">
                     If you spend just 10 hours/week on document analysis, email drafting, and meeting notes, AI automation could save you 520 hours per year. At a €50/hour billing rate, that's €26,000 in reclaimed value—or time for 3 strategic projects that actually advance your career.
                 </p>
+                <!-- LEAD MAGNET BUTTON DISABLED - Uncomment when PDF toolkit is ready
                 <button onclick="openLeadMagnet()" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-slate-100 transition" data-key="roiCta">
                     Get Your Free Time Savings Estimate
                 </button>
+                -->
+                <!-- Temporary CTA while PDF toolkit is being created -->
+                <a href="#contact" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-slate-100 transition">
+                    Contact Us to Learn More
+                </a>
             </div>
         </section>
 
@@ -767,21 +782,128 @@
             </div>
         </section>
 
-        <!-- Call-to-Action Section -->
+        <!-- Contact Section with Form (from main branch) -->
         <section id="contact" class="py-20 md:py-28 bg-slate-800 text-white">
-            <div class="container mx-auto px-6 text-center">
-                 <h2 class="text-3xl md:text-4xl font-bold mb-4" data-key="ctaTitle">Start Reclaiming 15 Hours Per Week</h2>
-                 <p class="text-lg text-slate-300 max-w-2xl mx-auto mb-10" data-key="ctaSubtitle">
-                    Download our free "AI Productivity Starter Kit" (15 ChatGPT prompts, tool comparison guide, ROI calculator) + book a 30-minute strategy session. No credit card required.
-                 </p>
-                 <div class="flex flex-col md:flex-row justify-center items-center gap-6">
-                    <button onclick="openLeadMagnet()" class="bg-blue-500 text-white px-8 py-4 rounded-lg font-semibold text-lg cta-button w-full md:w-auto" data-key="ctaButton1">
-                    Download Free Toolkit
-                    </button>
-                    <a href="https://calendar.app.google/n1fxohs2CJfJ8yut5" target="_blank" class="bg-white text-slate-800 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-slate-200 transition w-full md:w-auto" data-key="ctaButton2">
-                    Book Strategy Session
-                    </a>
-                 </div>
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4" data-key="contactTitle">Get in Touch</h2>
+                    <p class="text-lg text-slate-300 max-w-2xl mx-auto" data-key="contactSubtitle">
+                        Ready to transform your productivity? Fill out the form below and we'll get back to you within 24 hours.
+                    </p>
+                </div>
+
+                <div class="max-w-3xl mx-auto">
+                    <!-- Success Message (Hidden by default) -->
+                    <div id="form-success" class="hidden bg-green-500 text-white p-6 rounded-lg mb-6 text-center">
+                        <i data-lucide="check-circle-2" class="w-12 h-12 mx-auto mb-3"></i>
+                        <h3 class="text-xl font-bold mb-2" data-key="formSuccessTitle">Message Sent Successfully!</h3>
+                        <p data-key="formSuccessMessage">Thank you for contacting us. We'll get back to you soon.</p>
+                    </div>
+
+                    <!-- Error Message (Hidden by default) -->
+                    <div id="form-error" class="hidden bg-red-500 text-white p-6 rounded-lg mb-6 text-center">
+                        <i data-lucide="alert-circle" class="w-12 h-12 mx-auto mb-3"></i>
+                        <h3 class="text-xl font-bold mb-2" data-key="formErrorTitle">Oops! Something went wrong</h3>
+                        <p data-key="formErrorMessage">Please try again or contact us directly at contact@smartworkai.pro</p>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <form id="contact-form" action="https://formspree.io/f/xjkqawkd" method="POST" class="bg-white rounded-2xl p-8 md:p-10 shadow-2xl">
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <!-- First Name -->
+                            <div>
+                                <label for="firstName" class="block text-slate-700 font-semibold mb-2" data-key="formFirstName">First Name *</label>
+                                <input
+                                    type="text"
+                                    id="firstName"
+                                    name="firstName"
+                                    required
+                                    class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-slate-800"
+                                    data-key-placeholder="formFirstNamePlaceholder"
+                                    placeholder="John"
+                                >
+                            </div>
+
+                            <!-- Last Name -->
+                            <div>
+                                <label for="lastName" class="block text-slate-700 font-semibold mb-2" data-key="formLastName">Last Name *</label>
+                                <input
+                                    type="text"
+                                    id="lastName"
+                                    name="lastName"
+                                    required
+                                    class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-slate-800"
+                                    data-key-placeholder="formLastNamePlaceholder"
+                                    placeholder="Doe"
+                                >
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <!-- Email -->
+                            <div>
+                                <label for="email" class="block text-slate-700 font-semibold mb-2" data-key="formEmail">Email *</label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    required
+                                    class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-slate-800"
+                                    data-key-placeholder="formEmailPlaceholder"
+                                    placeholder="john.doe@company.com"
+                                >
+                            </div>
+
+                            <!-- Phone -->
+                            <div>
+                                <label for="phone" class="block text-slate-700 font-semibold mb-2" data-key="formPhone">Phone</label>
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    name="phone"
+                                    class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-slate-800"
+                                    data-key-placeholder="formPhonePlaceholder"
+                                    placeholder="+48 123 456 789"
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Message -->
+                        <div class="mb-6">
+                            <label for="message" class="block text-slate-700 font-semibold mb-2" data-key="formMessage">Message *</label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                required
+                                rows="5"
+                                class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-slate-800 resize-none"
+                                data-key-placeholder="formMessagePlaceholder"
+                                placeholder="Tell us about your needs and how we can help you..."
+                            ></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button
+                            type="submit"
+                            class="w-full bg-blue-500 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-600 transition cta-button flex items-center justify-center gap-2"
+                        >
+                            <span data-key="formSubmit">Send Message</span>
+                            <i data-lucide="send" class="w-5 h-5"></i>
+                        </button>
+
+                        <p class="text-slate-500 text-sm text-center mt-4" data-key="formPrivacy">
+                            Your information is safe with us and will never be shared with third parties.
+                        </p>
+                    </form>
+
+                    <!-- Optional: Link to booking calendar -->
+                    <div class="text-center mt-8">
+                        <p class="text-slate-300 mb-4">Or schedule a call directly:</p>
+                        <a href="https://calendar.app.google/n1fxohs2CJfJ8yut5" target="_blank" class="inline-block bg-white text-slate-800 px-8 py-3 rounded-lg font-semibold hover:bg-slate-200 transition" data-key="contactCalendar">
+                            Book a Call
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -835,7 +957,14 @@
         </div>
     </footer>
 
-    <!-- Lead Magnet Modal -->
+    <!-- Lead Magnet Modal - CURRENTLY DISABLED -->
+    <!--
+        This modal is ready to use once the PDF toolkit is created.
+        To enable it, uncomment the lead magnet buttons in:
+        1. Hero section (line ~204)
+        2. ROI Calculator section (line ~361)
+        3. Update Formspree endpoint below (line ~954) with your actual form ID
+    -->
     <div id="leadMagnetModal" class="hidden fixed inset-0 z-50 modal-overlay flex items-center justify-center p-4" x-data="{ showSuccess: false }">
         <div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full modal-content">
             <!-- Form View -->
@@ -1181,6 +1310,26 @@
                 modalSuccessNext: "Want to accelerate your AI transformation? Book a free 30-minute strategy session:",
                 modalSuccessCta: "Schedule Strategy Session",
                 modalSuccessClose: "Close",
+                // Contact form
+                contactTitle: "Get in Touch",
+                contactSubtitle: "Ready to transform your productivity? Fill out the form below and we'll get back to you within 24 hours.",
+                formSuccessTitle: "Message Sent Successfully!",
+                formSuccessMessage: "Thank you for contacting us. We'll get back to you soon.",
+                formErrorTitle: "Oops! Something went wrong",
+                formErrorMessage: "Please try again or contact us directly at contact@smartworkai.pro",
+                formFirstName: "First Name *",
+                formFirstNamePlaceholder: "John",
+                formLastName: "Last Name *",
+                formLastNamePlaceholder: "Doe",
+                formEmail: "Email *",
+                formEmailPlaceholder: "john.doe@company.com",
+                formPhone: "Phone",
+                formPhonePlaceholder: "+48 123 456 789",
+                formMessage: "Message *",
+                formMessagePlaceholder: "Tell us about your needs and how we can help you...",
+                formSubmit: "Send Message",
+                formPrivacy: "Your information is safe with us and will never be shared with third parties.",
+                contactCalendar: "Book a Call",
             },
             de: {
                 pageTitle: "KI Produktivitätstraining für Büroangestellte | SmartWorkAI",
