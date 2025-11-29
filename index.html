@@ -48,6 +48,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
+
+    <!-- Initialize language function BEFORE Alpine.js loads -->
+    <script>
+        // Placeholder - will be properly defined after translations are loaded
+        window.setLanguage = function(lang) {
+            // Store the language selection
+            localStorage.setItem('language', lang);
+            // The actual translation will be applied after DOM loads
+            console.log('Language set to:', lang);
+        }
+    </script>
+
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
     <script defer src="/_vercel/insights/script.js"></script>
@@ -1871,12 +1883,7 @@
             }
         };
 
-        // Language Switcher Logic
-        window.setLanguage = function(lang) {
-            localStorage.setItem('language', lang);
-            applyTranslations(lang);
-        }
-
+        // Language Switcher Logic - Define functions
         function applyTranslations(lang) {
             document.documentElement.lang = lang;
 
@@ -1906,6 +1913,12 @@
             if (typeof lucide !== 'undefined' && lucide.createIcons) {
                 lucide.createIcons();
             }
+        }
+
+        // Override the placeholder setLanguage with full implementation
+        window.setLanguage = function(lang) {
+            localStorage.setItem('language', lang);
+            applyTranslations(lang);
         }
 
         document.addEventListener('DOMContentLoaded', () => {
