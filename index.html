@@ -47,7 +47,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.1/dist/umd/lucide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
     <script defer src="/_vercel/insights/script.js"></script>
@@ -1147,7 +1147,9 @@
         function openLeadMagnet() {
             document.getElementById('leadMagnetModal').classList.remove('hidden');
             document.body.style.overflow = 'hidden';
-            lucide.createIcons(); // Re-render icons in modal
+            if (typeof lucide !== 'undefined' && lucide.createIcons) {
+                lucide.createIcons(); // Re-render icons in modal
+            }
         }
 
         function closeLeadMagnet() {
@@ -1909,12 +1911,18 @@
             }
 
             // **FIX:** Re-render Lucide icons after translation
-            lucide.createIcons();
+            if (typeof lucide !== 'undefined' && lucide.createIcons) {
+                lucide.createIcons();
+            }
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            // Initialize Lucide icons immediately
-            lucide.createIcons();
+            // Initialize Lucide icons immediately with error handling
+            if (typeof lucide !== 'undefined' && lucide.createIcons) {
+                lucide.createIcons();
+            } else {
+                console.error('Lucide library not loaded');
+            }
 
             // Mobile Menu Toggle
             const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -1966,7 +1974,9 @@
                             contactForm.reset();
 
                             // Re-render icons after reset
-                            lucide.createIcons();
+                            if (typeof lucide !== 'undefined' && lucide.createIcons) {
+                                lucide.createIcons();
+                            }
 
                             // Scroll to success message
                             formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -1984,7 +1994,9 @@
                         formSuccess.classList.add('hidden');
 
                         // Re-render icons
-                        lucide.createIcons();
+                        if (typeof lucide !== 'undefined' && lucide.createIcons) {
+                            lucide.createIcons();
+                        }
 
                         // Scroll to error message
                         formError.scrollIntoView({ behavior: 'smooth', block: 'center' });
