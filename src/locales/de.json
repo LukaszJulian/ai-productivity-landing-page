@@ -1,0 +1,105 @@
+{
+  "nav": {
+    "about": "Über",
+    "tools": "KI-Tools",
+    "training": "Schulung",
+    "results": "Ergebnisse",
+    "contact": "Kontakt",
+    "course": "Online-Kurs",
+    "workshops": "Workshops",
+    "prompts": "Prompts"
+  },
+  "hero": {
+    "tag": "KI-Training für Einkauf",
+    "title": "KI im Einkauf: Sparen Sie 10+ Stunden pro Woche",
+    "subtitle": "Praktische KI-Workshops für Einkaufsprofis. ChatGPT, Claude & 5+ Tools. Bewährte Methoden aus 20+ Jahren Prozessoptimierung.",
+    "cta": "Jetzt starten",
+    "video": "Mehr erfahren"
+  },
+  "offerings": {
+    "tag": "Unsere Produkte",
+    "title": "Wählen Sie Ihren KI-Entwicklungsweg",
+    "subtitle": "Von Online-Kursen bis zu maßgeschneiderten Unternehmensworkshops - finden Sie die passende Lösung"
+  },
+  "course": {
+    "title": "KI-Survival-Kit für Einkäufer",
+    "subtitle": "4 Stunden Arbeit in 15 Minuten",
+    "tagline": "Micro-Learning Online-Kurs",
+    "description": "Genug von der 'Excel-Hölle'? Übergeben Sie mühsame Arbeiten der Künstlichen Intelligenz. Verschwenden Sie keine Stunden mehr mit dem Abtippen von Angeboten.",
+    "duration": "50 Minuten Kurs",
+    "price": "149 PLN",
+    "oldPrice": "299 PLN",
+    "cta": "Jetzt kaufen",
+    "guarantee": "Sparen Sie in der ersten Woche keine Stunde? Geld zurück.",
+    "benefits": {
+      "title": "Was bekommen Sie?",
+      "extraction": {
+        "title": "Angebotsextraktion (60s)",
+        "desc": "Verwandeln Sie einen Stapel PDFs in eine fertige Vergleichstabelle"
+      },
+      "auditor": {
+        "title": "Vertragsauditor",
+        "desc": "KI erkennt sofort Risiken und Preiseskalations-'Haken'"
+      },
+      "framework": {
+        "title": "RTCFC-Framework",
+        "desc": "Lernen Sie Prompts zu schreiben, die konkrete Ergebnisse liefern"
+      },
+      "calculator": {
+        "title": "TCO-Rechner",
+        "desc": "Schnelle Berechnung echter Kosten und Einsparungen"
+      }
+    },
+    "includes": {
+      "title": "Paket enthält:",
+      "videos": "6 Videolektionen (praktisches Wissen)",
+      "prompts": "Bibliothek fertiger Prompts (PDF)",
+      "agent": "KI-Agent-Konfigurationsanleitung",
+      "certificate": "Abschlusszertifikat"
+    },
+    "trainer": {
+      "title": "Warum lohnt es sich?",
+      "name": "Łukasz Ostrowski",
+      "bio": "20 Jahre Erfahrung im strategischen Einkauf (Allegro, Bosch, Orange). Ich lehre keine Theorie, sondern Systeme, die in der Unternehmenspraxis funktionieren."
+    }
+  },
+  "workshops": {
+    "title": "Unternehmensworkshops",
+    "team": {
+      "title": "Teamtraining",
+      "tagline": "Abteilungsimplementierungsprogramm",
+      "desc": "8-wöchiges strukturiertes Programm für Teams von 5-50+ Mitarbeitern. Umfasst Baseline-Assessment, praktisches Training und messbare Ergebnisse.",
+      "price": "€2.400",
+      "priceDetails": "8-Wochen-Programm | 16 Stunden Live-Training | 90-Tage-Support",
+      "cta": "Training anfragen"
+    },
+    "executive": {
+      "title": "Executive Coaching",
+      "tagline": "Personalisierte KI-Beherrschung für Führungskräfte",
+      "desc": "Individuelles KI-Produktivitäts-Coaching, angepasst an Ihre Rolle, Herausforderungen und strategischen Ziele. Perfekt für Führungskräfte.",
+      "price": "€800",
+      "priceDetails": "Pro Sitzung | Mindestens 4 Sitzungen | Lebenslanger Ressourcenzugriff",
+      "cta": "Coaching buchen"
+    }
+  },
+  "prompts": {
+    "title": "Kostenlose Prompts für Einkäufer",
+    "subtitle": "Demnächst verfügbar",
+    "description": "Set von 5 vorgefertigten KI-Prompts für Einkaufsprofis. Sparen Sie Zeit bei Angebotsanalyse, Verhandlungen und Berichterstattung.",
+    "comingSoon": "Wir arbeiten an der Vorbereitung wertvoller Materialien. Bald verfügbar!"
+  },
+  "contact": {
+    "title": "Kontaktieren Sie uns",
+    "subtitle": "Haben Sie Fragen? Schreiben Sie mir",
+    "form": {
+      "name": "Vollständiger Name",
+      "email": "E-Mail",
+      "message": "Nachricht",
+      "submit": "Senden"
+    }
+  },
+  "footer": {
+    "rights": "Alle Rechte vorbehalten",
+    "privacy": "Datenschutzrichtlinie"
+  }
+}
